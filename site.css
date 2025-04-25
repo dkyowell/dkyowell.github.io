@@ -53,6 +53,22 @@ ul {
 	//height: 91vh
 }
 
+.notmain {
+	padding-left: 30px;
+	padding-right: 30px;
+	max-width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	flex-direction: column;
+	align-items: normal;
+	align-content: normal;
+	gap: 40px;
+}
+
+
+
+
 .main-scrollable {
 	padding-left: 30px;
 	padding-right: 30px;
