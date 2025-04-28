@@ -12,48 +12,48 @@
 	<script></script>
 </head>
 <body>
-<div class="notmain">
-	<div class="header">
-		<div class="logo"><a href="index.html">Hollywood Hardware</a></div>
+<div class="body">
+	<header>
+	<div class="flexrow baseline">
+		<div class="logo"><a href="index.html" style="text-decoration: none">Hollywood Hardware</a></div>
 		<div class="navbar">
-			<div class="navitem"><a href="collections.html">Collections</a></div>
 			<div class="navitem"><a href="showroom.html">Showroom</a></div>
-			<div class="navitem"><a href="about.html">About Us</a></div>
+			<div class="navitem"><a href="collections.html">Collections</a></div>
+			<div class="navitem"><a href="about.html">Our Story</a></div>
 		</div>
 		<div class="navbutton">
 			<button id="menu-button">
-				<svg height="24" width="24" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<svg height="24" width="24" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16 M4 12h16 M4 18h16"/>
 				</svg>
 			</button>
 		</div>		
-	</div>	
-	<div style="width: 85%; margin: auto">
-		<p>Our Houston roots run deep! We are a third generation family owned business that is passionate about bringing the best hardware and plumbing designs from around the world to Houston's design community. We are equally passionate about providing quality customer service to our clients.</p>
-		<p>
-		Like many of his generation, our founder John Crosland headed West from Texas seeking work during the 1930’s. He found his way to Hollywood, California, and learned the overhead door trade. In 1938 he brought an entrepreneurial spirit and some Hollywood sizzle back with him to Texas, founding Hollywood Crawford Door Company in Houston. This was the first of several “Hollywood” companies he started: Hollywood Steel, Hollywood Electronics, and finally Hollywood Builders Hardware.
-		</p>
-		<p>
-		We are proud to carry on this tradition, serving a new generation of Houstonians.
-		</p>
 	</div>
-		<img src="truck.webp" style="width: 85%; margin: auto"/>
+	</header>
+	<main>
+		<p>Our Houston roots run deep! We are a third generation family owned business that is passionate about bringing the best hardware and plumbing designs from around the world to Houston's design community.</p>
+		<p>Like many of his generation, our founder John Crosland headed West from Texas seeking work during the 1930’s. He found his way to Hollywood, California, and learned the overhead door trade. In 1938 he brought an entrepreneurial spirit and some Hollywood sizzle back with him to Texas, founding Hollywood Crawford Door Company in Houston. This was followed by Hollywood Steel, Hollywood Electronics, and finally Hollywood Builders Hardware.</p>
+		<p>We are proud to carry on this tradition, serving a new generation of Houstonians.</p>
+		<div style="text-align: center;">
+			<img src="truck.webp" style="height: 300px"/>
+		</div>
+	</main>
 </div>
-<div id="menu-overlay" class="offscreen-left" style="padding: 30px">
-	<div style="width: 100%; text-align: right;padding-bottom: 30px">
-		<button id="close-button">
-			<svg height="24" width="24" fill="cyan" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4 L20 20 M20 4 L4 20"></path>
-			</svg>
-		</button>
-	</div>		
-	<div style="display: flex; flex-direction: column; gap: 50px">
-		<div class="navitem"><a href="index.html">Home</a></div>
-		<div class="navitem"><a href="collections.html">Collections</a></div>
-		<div class="navitem"><a href="showroom.html">Showroom</a></div>
-		<div class="navitem"><a href="about.html">About Us</a></div>
+	<div id="menu-overlay" class="offscreen-left">
+		<div style="padding: 30px">
+			<div style="display: flex; flex-direction: column; gap: 50px">
+				<button id="close-button" style="text-align: right">
+				<svg height="24" width="24" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4 L20 20 M20 4 L4 20"></path>
+				</svg>
+				</button>
+				<div class="navitem"><a href="index.html">Home</a></div>
+				<div class="navitem"><a href="showroom.html">Showroom</a></div>
+				<div class="navitem"><a href="collections.html">Collections</a></div>
+				<div class="navitem"><a href="about.html">Our Story</a></div>
+			</div>
+		</div>
 	</div>
-</div>
-<script src="common.js"></script>
+	<script src="common.js"></script>
 </body>
 </html>

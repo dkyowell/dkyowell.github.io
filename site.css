@@ -1,121 +1,52 @@
 html {
 	height: 100%;
-	margin: 0;
-	background: color(display-p3 0.521 0.521 0.566);
+	margin: 0px;
+	padding: 0px;
+	background: rgba(248, 248, 248, 1);
+	color: rgb(78, 80, 83)
  }
-
+ 
 body {
-	margin: 0;
+	height: 100%;
+	margin: 0px;
+	padding: 0px;
 	font-family: "Poppins", sans-serif;
 	font-weight: 300;
 	font-style: normal;
-	color: white;
-	height: 100%;
+}
+
+.body {
+	 max-width: 1024px;
+	 margin-left: auto;
+	 margin-right: auto;
+ }
+
+
+header {
+	padding: 2em;
+}
+
+main {
+	padding: 2em;
+}
+
+footer {
+	padding: 2em;
 }
 
 a {
-	color: white; /* Or your desired link color */
+	color: inherit; /* Or your desired link color */
 	text-decoration: none; /* Remove underline if you prefer */
 	transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the effect */
 }
 
 a:hover {
 	text-decoration: underline; /* Remove underline if you prefer */
-	//box-shadow: 0 0 10px rgba(0, 123, 255, 0.7); /* Adjust color and blur radius */
 }
 
-ul {
-  list-style-type: none; /* Remove bullets */
-  padding: 0; /* Remove default padding from the list */
-  margin: 0;  /*Remove default margin from the list*/
-}
-
-		button {
+button {
 	background: none;
 	border: none;
-}
-
-#menu-overlay {
-	position: fixed;
-	top:0;
-	left: 0;
-	width: 50vw;
-	height: 100vh;
-	background: black;
-	opacity: 85%;
-}
-
-.onscreen {
-	transform: translateX(0px);
-	transition: transform 0.3s ease; /* Smooth transition */
-}		
-
-.offscreen-left {
-	transform: translateX(-100%);
-	transition: transform 0.3s ease; /* Smooth transition */
-}				
-
-.current {
-	text-decoration: underline; /* Remove underline if you prefer */
-}
-
-.main {
-	//min-width: 900px;
-//	padding: 30px;
-	padding-left: 30px;
-	padding-right: 30px;
-	max-width: 850px;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: normal;
-	align-content: normal;
-	row-gap: 40px;
-	height: 100%;
-	//height: 91vh
-}
-
-.notmain {
-	padding-left: 30px;
-	padding-right: 30px;
-	max-width: 850px;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	flex-direction: column;
-	align-items: normal;
-	align-content: normal;
-	gap: 40px;
-}
-
-.main-scrollable {
-	padding-left: 30px;
-	padding-right: 30px;
-	max-width: 850px;
-	margin-left: auto;
-	margin-right: auto;
-	display: flex;
-	flex-direction: column;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: normal;
-	align-content: normal;
-	row-gap: 40px;
-	height: 100%;
-	//height: 91vh
-}
-
-
-.header {
-	padding-top: 30px;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	align-items: baseline;
 }
 
 .logo {
@@ -124,8 +55,8 @@ ul {
 	font-optical-sizing: auto;
 	font-weight: 600;
 	font-style: normal;
-	font-size: x-large;
-	letter-spacing: -0.5px;
+	font-size: 20pt;
+	letter-spacing: -1.5px;
 }
 
 .navbar {
@@ -140,28 +71,28 @@ ul {
 	flex-shrink: 0;
 }
 
-.home-content {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	gap: 30px;
+
+#menu-overlay {
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100vw;
+	height: 100%;
+	background: black;
+	opacity: 85%;
+	color: white
 }
 
-.tagline {
-	flex-shrink: 0;
-	font-size: 36px;
-	font-family: "Poppins", sans-serif;
-	font-weight: 100;
-	line-height: 1.25;
-	text-align: center;
-}
+.onscreen {
+	transform: translateX(0px);
+	transition: transform 0.3s ease; /* Smooth transition */
+}		
 
-.splide {
-	width: 800px;
-}
-.splide__slide img {
-	height: 400px;
-}
+.offscreen-left {
+	transform: translateX(-100%);
+	transition: transform 0.3s ease; /* Smooth transition */
+}				
+
 
 .footer {
 	padding-bottom: 30px;
@@ -175,41 +106,23 @@ ul {
 	font-size: 10pt;
 }
 
-.image-fader {
-	position: relative; /* Crucial for absolute positioning of children */
-	width: 600px;      /* Adjust to your image size */
-	height: 400px;     /* Adjust to your image size */
+.flexrow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	gap: 20px;
 }
 
-.fade-image {
-	position: absolute; /* Stack images */
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	object-fit: contain;
-	//object-fit: cover; /* Optional: Adjust image scaling */
-	
-	opacity: 0;        /* Start hidden */
-	transition: opacity 1s ease-in-out; /* Define the fade duration and timing */
-	/* ^---- Duration (e.g., 1s, 500ms) */
-	/* ^------ Timing function (ease, linear, ease-in, etc.) */
+.baseline {
+	align-items: baseline
 }
-
-.fade-image.active {
-	opacity: 1;        /* Make active image visible */
-}		
 
 .navbutton {
 	display: none;
 }
 
-@media screen and (max-width: 600px) {
-	.tagline {
-		font-size: 24px;
-		//text-align: center;
-	}
-
+@media screen and (max-width: 640px) {
 	.navbar {
 		display: none
 	}
@@ -217,15 +130,4 @@ ul {
 	.navbutton {
 		display: revert
 	}
-
-	/* .footer {
-		flex-direction: column;
-		gap: 0px;
-	} */
-
-	.image-fader {
-		width: 80vw;
-		height: 300px;
-	}
-	
 }

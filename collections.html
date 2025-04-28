@@ -8,118 +8,146 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<style></style>
+	<style>
+		.collection {
+			display: grid;
+			width: 100%;
+			padding-top: 6px;
+			grid-template-columns: repeat(3, 1fr);
+			gap: 4px
+		}
+		
+		.collection-heading {
+			font-weight: 600;
+			width: 100%;
+			padding: 2px;
+			background: rgba(0, 0, 0, 0.071);
+		}
+		
+		@media screen and (max-width: 640px) {
+			.collection {
+				grid-template-columns: repeat(2, 1fr);
+			}
+		}
+
+	</style>
 	<script></script>
 </head>
 <body>
-<div class="notmain">
-	<div class="header">
-		<div class="logo"><a href="index.html">Hollywood Hardware</a></div>
+<div class="body">
+	<header>
+	<div class="flexrow baseline">
+		<div class="logo"><a href="index.html" style="text-decoration: none">Hollywood Hardware</a></div>
 		<div class="navbar">
-			<div class="navitem"><a href="collections.html">Collections</a></div>
 			<div class="navitem"><a href="showroom.html">Showroom</a></div>
-			<div class="navitem"><a href="about.html">About Us</a></div>
+			<div class="navitem"><a href="collections.html">Collections</a></div>
+			<div class="navitem"><a href="about.html">Our Story</a></div>
 		</div>
 		<div class="navbutton">
 			<button id="menu-button">
-				<svg height="24" width="24" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<svg height="24" width="24" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16 M4 12h16 M4 18h16"/>
 				</svg>
 			</button>
 		</div>		
-	</div>	
-	<div>
-		<div style="text-align: center; margin: auto"><b>Bath</b></div>
-		<div style="display: grid; width: 100%;grid-template-columns: repeat(3, 1fr); gap: 6px">
-			<div>Americh</div>
-			<div>Axor</div>
-			<div>Bain Ultra</div>
-			<div>California Faucets</div>
-			<div>Cheviot</div>
-			<div>Crosswater</div>
-			<div>Dornbracht</div>
-			<div>DXV</div>
-			<div>Franz Viegner</div>
-			<div>Hansgrohe</div>
-			<div>Herbeau</div>
-			<div>Hours</div>
-			<div>House of Rohl</div>
-			<div>Hydro Systems</div>
-			<div>Kallista</div>
-			<div>Kast</div>
-			<div>Link-A-Sink</div>
-			<div>Marzi</div>
-			<div>Phylrich</div>
-			<div>Newport Brass</div>
-			<div>Samuel Heath</div>
-			<div>Stone Forest</div>
-			<div>THG Paris</div>
-			<div>Watermark</div>
+	</div>
+	</header>
+	<main>
+	<div style="display: flex; flex-direction: column; gap: 30px">
+		<div>
+			<div class="collection-heading">Bath</div>
+			<div class="collection">
+				<div>Americh</div>
+				<div>Axor</div>
+				<div>Bain Ultra</div>
+				<div>California Faucets</div>
+				<div>Cheviot</div>
+				<div>Crosswater</div>
+				<div>Dornbracht</div>
+				<div>DXV</div>
+				<div>Franz Viegner</div>
+				<div>Hansgrohe</div>
+				<div>Herbeau</div>
+				<div>Hours</div>
+				<div>House of Rohl</div>
+				<div>Hydro Systems</div>
+				<div>Kallista</div>
+				<div>Kast</div>
+				<div>Link-A-Sink</div>
+				<div>Marzi</div>
+				<div>Phylrich</div>
+				<div>Newport Brass</div>
+				<div>Samuel Heath</div>
+				<div>Stone Forest</div>
+				<div>THG Paris</div>
+				<div>Watermark</div>
+			</div>
+		</div>
+		<div>
+			<div class="collection-heading">Kitchen & Bar</div>
+			<div class="collection">
+				<div>Axor</div>
+				<div>California Faucets</div>
+				<div>Dornbracht</div>
+				<div>Franke</div>
+				<div>Franz Viegner</div>
+				<div>Hansgrohe</div>
+				<div>Herbeau</div>
+				<div>Hours</div>
+				<div>Julien</div>
+				<div>Kallista</div>
+				<div>Link-A-Sink</div>
+				<div>Milla</div>
+				<div>Newport Brass</div>
+				<div>Perrin & Rowe</div>
+				<div>Rohl</div>
+				<div>Samuel Heath</div>
+				<div>Shaw's</div>
+				<div>Stone Forest</div>
+				<div>THG Paris</div>
+				<div>Watermark</div>
+				<div>Waterstone</div>
+			</div>
+		</div>
+		<div>
+			<div class="collection-heading">Hardware</div>
+			<div class="collection">
+				<div>Alno</div>
+				<div>Armac Martin</div>
+				<div>Ashley Norton</div>
+				<div>Baldwin</div>
+				<div>Classic Brass</div>
+				<div>Designer Doorware</div>
+				<div>Edgar Berebi</div>
+				<div>FSB</div>
+				<div>Ged Kenent</div>
+				<div>Hamilton Sinkler</div>
+				<div>Hardware Renaissance</div>
+				<div>Nest Studio</div>
+				<div>Rocky Mountain</div>
+				<div>Schaub</div>
+				<div>Sietto</div>
+				<div>Top Knobs</div>
+				<div>Turnstyle Designs</div>
+				<div>Water Street</div>
+			</div>
 		</div>
 	</div>
-	<div>
-		<div style="text-align: center; margin: auto"><b>Kitchen & Bar</b></div>
-		<div style="display: grid; width: 100%;grid-template-columns: repeat(3, 1fr); gap: 6px">
-			<div>Axor</div>
-			<div>California Faucets</div>
-			<div>Dornbracht</div>
-			<div>Franke</div>
-			<div>Franz Viegner</div>
-			<div>Hansgrohe</div>
-			<div>Herbeau</div>
-			<div>Hours</div>
-			<div>Julien</div>
-			<div>Kallista</div>
-			<div>Link-A-Sink</div>
-			<div>Milla</div>
-			<div>Newport Brass</div>
-			<div>Perrin & Rowe</div>
-			<div>Rohl</div>
-			<div>Samuel Heath</div>
-			<div>Shaw's</div>
-			<div>Stone Forest</div>
-			<div>THG Paris</div>
-			<div>Watermark</div>
-			<div>Waterstone</div>
+	</main>
+	<div id="menu-overlay" class="offscreen-left">
+		<div style="padding: 30px">
+			<div style="display: flex; flex-direction: column; gap: 50px">
+				<button id="close-button" style="text-align: right">
+				<svg height="24" width="24" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4 L20 20 M20 4 L4 20"></path>
+				</svg>
+				</button>
+				<div class="navitem"><a href="index.html">Home</a></div>
+				<div class="navitem"><a href="showroom.html">Showroom</a></div>
+				<div class="navitem"><a href="collections.html">Collections</a></div>
+				<div class="navitem"><a href="about.html">Our Story</a></div>
+			</div>
 		</div>
-	</div>
-	<div>
-		<div style="text-align: center; margin: auto"><b>Hardware</b></div>
-		<div style="display: grid; width: 100%;grid-template-columns: repeat(3, 1fr); gap: 6px">
-			<div>Alno</div>
-			<div>Armac Martin</div>
-			<div>Ashley Norton</div>
-			<div>Baldwin</div>
-			<div>Classic Brass</div>
-			<div>Designer Doorware</div>
-			<div>Edgar Berebi</div>
-			<div>FSB</div>
-			<div>Ged Kenent</div>
-			<div>Hamilton Sinkler</div>
-			<div>Hardware Renaissance</div>
-			<div>Nest Studio</div>
-			<div>Rocky Mountain</div>
-			<div>Schaub</div>
-			<div>Sietto</div>
-			<div>Top Knobs</div>
-			<div>Turnstyle Designs</div>
-			<div>Water Street</div>
-		</div>
-	</div>
-</div>
-<div id="menu-overlay" class="offscreen-left" style="padding: 30px">
-	<div style="width: 100%; text-align: right;padding-bottom: 30px">
-		<button id="close-button">
-			<svg height="24" width="24" fill="cyan" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4 L20 20 M20 4 L4 20"></path>
-			</svg>
-		</button>
-	</div>		
-	<div style="display: flex; flex-direction: column; gap: 50px">
-		<div class="navitem"><a href="index.html">Home</a></div>
-		<div class="navitem"><a href="collections.html">Collections</a></div>
-		<div class="navitem"><a href="showroom.html">Showroom</a></div>
-		<div class="navitem"><a href="about.html">About Us</a></div>
 	</div>
 </div>
 <script src="common.js"></script>

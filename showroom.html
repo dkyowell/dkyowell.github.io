@@ -8,65 +8,83 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<style></style>
+	<style>
+		.section {
+			padding-bottom: 30px;
+		}
+		.section-heading {
+			font-weight: 600;
+		}
+	</style>
 	<script></script>
 </head>
 <body>
-<div class="notmain">
-	<div class="header">
-		<div class="logo"><a href="index.html">Hollywood Hardware</a></div>
+<div class="body">
+	<header>
+	<div class="flexrow baseline">
+		<div class="logo"><a href="index.html" style="text-decoration: none">Hollywood Hardware</a></div>
 		<div class="navbar">
-			<div class="navitem"><a href="collections.html">Collections</a></div>
 			<div class="navitem"><a href="showroom.html">Showroom</a></div>
-			<div class="navitem"><a href="about.html">About Us</a></div>
+			<div class="navitem"><a href="collections.html">Collections</a></div>
+			<div class="navitem"><a href="about.html">Our Story</a></div>
 		</div>
 		<div class="navbutton">
 			<button id="menu-button">
-				<svg height="24" width="24" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+				<svg height="24" width="24" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
 					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16 M4 12h16 M4 18h16"/>
 				</svg>
 			</button>
 		</div>		
-	</div>	
-	<div style="overflow-y: auto; scrollbar-width: none; height: 100%">
-		<div>
-			We have an extensive showroom displaying collections from the finest plumbing and hardware
-			manufacturers in the world.
+	</div>
+	</header>
+	<main>
+		<div style="padding-bottom: 30px">
+			We invite your to visit out extensive showroom displaying collections from the finest plumbing and hardware manufacturers in the world.
 		</div>
-		<div>
-			Contact<br>
+		<div class="section">
+			<div class="section-heading">
+				By Appointment
+			</div>
+			Our showroom staff works by appointment, however, you are welcome to visit and browse at your convenience.
+		</div>
+		<div class="section">
+			<div class="section-heading">
+				Contact
+			</div>
 			713.644.8301<br>
 			info@hollywoodhardware.com
 		</div>
-		<div>
-			Hours<br>
-			Monday to Friday, 8am to 4pm
+		<div class="section">
+			<div class="section-heading">
+			Hours
+			</div>
+			Monday to Friday<br>
+			8am to 4pm
 		</div>
-		<div>
-			Location<br>
+		<div class="section">
+			<div class="section-heading">
+				Location
+			</div>
 			747 N. Shepherd STE 200</br>
 			Houston, TX 77007
 		</div>
-		<div>
-			By Appointment<br>
+	</main>	
+</div>
+	<div id="menu-overlay" class="offscreen-left">
+		<div style="padding: 30px">
+			<div style="display: flex; flex-direction: column; gap: 50px">
+				<button id="close-button" style="text-align: right">
+				<svg height="24" width="24" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4 L20 20 M20 4 L4 20"></path>
+				</svg>
+				</button>
+				<div class="navitem"><a href="index.html">Home</a></div>
+				<div class="navitem"><a href="showroom.html">Showroom</a></div>
+				<div class="navitem"><a href="collections.html">Collections</a></div>
+				<div class="navitem"><a href="about.html">Our Story</a></div>
+			</div>
 		</div>
 	</div>
-</div>
-<div id="menu-overlay" class="offscreen-left" style="padding: 30px">
-	<div style="width: 100%; text-align: right;padding-bottom: 30px">
-		<button id="close-button">
-			<svg height="24" width="24" fill="cyan" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4 L20 20 M20 4 L4 20"></path>
-			</svg>
-		</button>
-	</div>		
-	<div style="display: flex; flex-direction: column; gap: 50px">
-		<div class="navitem"><a href="index.html">Home</a></div>
-		<div class="navitem"><a href="collections.html">Collections</a></div>
-		<div class="navitem"><a href="showroom.html">Showroom</a></div>
-		<div class="navitem"><a href="about.html">About Us</a></div>
-	</div>
-</div>
-<script src="common.js"></script>
+	<script src="common.js"></script>
 </body>
 </html>
