@@ -39,8 +39,8 @@ ul {
 	position: fixed;
 	top:0;
 	left: 0;
-	width: 50%;
-	height: 100%;
+	width: 50vw;
+	height: 100vh;
 	background: black;
 	opacity: 85%;
 }
