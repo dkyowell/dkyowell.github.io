@@ -18,26 +18,13 @@ body {
 	 margin-right: auto;
 }
 
-.body {
- }
-
-
-header {
-	padding: 2em;
-}
-
-main {
-	padding: 2em;
-}
-
-footer {
+header, main, footer {
 	padding: 2em;
 }
 
 a {
 	color: inherit; /* Or your desired link color */
 	text-decoration: none; /* Remove underline if you prefer */
-	transition: box-shadow 0.3s ease-in-out; /* Smooth transition for the effect */
 }
 
 a:hover {
@@ -47,6 +34,39 @@ a:hover {
 button {
 	background: none;
 	border: none;
+}
+
+#menu-overlay {
+	position: fixed;
+	top:0;
+	left: 0;
+	width: 100vw;
+	height: 100%;
+	background: black;
+	opacity: 85%;
+	color: white
+}
+
+.onscreen {
+	transform: translateX(0px);
+	transition: transform 0.3s ease; /* Smooth transition */
+}		
+
+.offscreen-left {
+	transform: translateX(-100%);
+	transition: transform 0.3s ease; /* Smooth transition */
+}				
+
+.flexrow {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	gap: 20px;
+}
+
+.baseline {
+	align-items: baseline
 }
 
 .logo {
@@ -71,63 +91,16 @@ button {
 	flex-shrink: 0;
 }
 
-
-#menu-overlay {
-	position: fixed;
-	top:0;
-	left: 0;
-	width: 100vw;
-	height: 100%;
-	background: black;
-	opacity: 85%;
-	color: white
-}
-
-.onscreen {
-	transform: translateX(0px);
-	transition: transform 0.3s ease; /* Smooth transition */
-}		
-
-.offscreen-left {
-	transform: translateX(-100%);
-	transition: transform 0.3s ease; /* Smooth transition */
-}				
-
-
-.footer {
-	padding-bottom: 30px;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: wrap;
-	justify-content: space-between;
-	align-items: normal;
-	align-content: normal;
-	gap: 20px;
-	font-size: 10pt;
-}
-
-.flexrow {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	gap: 20px;
-}
-
-.baseline {
-	align-items: baseline
-}
-
 .navbutton {
 	display: none;
 }
 
 @media screen and (max-width: 640px) {
 	.navbar {
-		display: none
+		display: none;
 	}
 
 	.navbutton {
-		display: revert
+		display: revert;
 	}
 }

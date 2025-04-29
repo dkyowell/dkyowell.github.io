@@ -47,16 +47,11 @@
 			flex-direction: column;
 			min-height: 100%; /* Fallback and explicit viewport height */
 		}
-		
+
 		header, footer {
-			//background-color: #f2f2f2;
 			flex-shrink: 0;
 		}
-		
-		header, footer, main {
-			//max-width: 1024px;
-		}
-		
+
 		main {
 			flex-grow: 1; /* Allows this element to grow and fill available space */
 			display: flex; /* Make main a flex container for its children */			
@@ -64,17 +59,14 @@
 			overflow: overflow; /* Prevent main from overflowing, let children scroll */
 		}
 		
-		/* Style the first section (33% height of main) */
 		.section-one {
 			flex-basis: 75%;  /* Flexbox way to define initial size */
 			min-height: 300px;
+			max-height: 600px;
 			padding: 3em;
 			box-sizing: border-box; /* Include padding in height */
-			//background: rgba(0, 0, 0, .1);
-			max-height: 700px;
 		}
-		
-		/* Style the second section (67% height of main) */
+
 		.section-two {
 			flex-basis: 25%;  /* Flexbox way to define initial size */
 			box-sizing: border-box; /* Include padding in height */
@@ -86,7 +78,7 @@
 			margin: auto;
 			height: 100%;     /* Adjust to your image size */
 		}
-		
+
 		.fade-image {
 			position: absolute; /* Stack images */
 			top: 0;
@@ -97,15 +89,12 @@
 			//object-fit: cover; /* Optional: Adjust image scaling */
 			
 			opacity: 0;        /* Start hidden */
-			transition: opacity 1s ease-in-out; /* Define the fade duration and timing */
-			/* ^---- Duration (e.g., 1s, 500ms) */
-			/* ^------ Timing function (ease, linear, ease-in, etc.) */
+			transition: opacity 0.5s ease-in-out; /* Define the fade duration and timing */
 		}
-		
+
 		.fade-image.active {
 			opacity: 1;        /* Make active image visible */
 		}		
-		
 
 		.tagline {
 			font-size: 32px;
@@ -115,20 +104,17 @@
 			text-align: left;
 			width: 100%;
 		}	
-		
+
 		@media screen and (max-width: 640px) {
 			.tagline {
 				font-size: 24px;
-				//text-align: center;
 			}	
 			
 			.section-one {
 				min-height: 200px;
-				padding: 1em;
-			}
-	
-		}
-	
+				max-height: 500px;
+			}	
+		}	
 	</style>
 </head>
 <body>
@@ -168,30 +154,27 @@
 			</div>
 		</div>
 	</main>
-
-	<!-- <main>
-	</main> -->
 	<footer>
 		<div class="flexrow" style="font-size: 10pt" >
 			<div><a href="mailto:reception@hollywoodhardware.com">reception@hollywoodhardware.com</a></div>
 			<div><a href="tel:713-644-8301">713.644.8301</a></div>
 		</div>
 	</footer>
-<div id="menu-overlay" class="offscreen-left">
-	<div style="padding: 30px">
-		<div style="display: flex; flex-direction: column; gap: 50px">
-			<button id="close-button" style="text-align: right">
-			<svg height="24" width="24" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-				<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4 L20 20 M20 4 L4 20"></path>
-			</svg>
-			</button>
-			<div class="navitem"><a href="index.html">Home</a></div>
-			<div class="navitem"><a href="showroom.html">Showroom</a></div>
-			<div class="navitem"><a href="collections.html">Collections</a></div>
-			<div class="navitem"><a href="about.html">Our Story</a></div>
+	<div id="menu-overlay" class="offscreen-left">
+		<div style="padding: 30px">
+			<div style="display: flex; flex-direction: column; gap: 50px">
+				<button id="close-button" style="text-align: right">
+				<svg height="24" width="24" stroke="white" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4 L20 20 M20 4 L4 20"></path>
+				</svg>
+				</button>
+				<div class="navitem"><a href="index.html">Home</a></div>
+				<div class="navitem"><a href="showroom.html">Showroom</a></div>
+				<div class="navitem"><a href="collections.html">Collections</a></div>
+				<div class="navitem"><a href="about.html">Our Story</a></div>
+			</div>
 		</div>
 	</div>
-</div>
-<script src="common.js"></script>
+	<script src="common.js"></script>
 </body>
 </html>
