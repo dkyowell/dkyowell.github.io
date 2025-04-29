@@ -104,6 +104,9 @@
 			text-align: left;
 			width: 100%;
 		}	
+ 	   #menu-path {
+			transition: d 0.8s ease-in-out;	 
+		 }
 
 		@media screen and (max-width: 640px) {
 			.tagline {
@@ -119,6 +122,7 @@
 </head>
 <body>
 	<header>
+		<div id="header">
 		<div class="flexrow baseline">
 			<div class="logo">
 				<a href="index.html" style="text-decoration: none">Hollywood Hardware</a>
@@ -129,17 +133,27 @@
 				<div class="navitem"><a href="about.html">Our Story</a></div>
 			</div>
 			<div class="navbutton">
-				<button id="menu-button">
-					<svg height="24" width="24" stroke="black" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16 M4 12h16 M4 18h16"/>
+				<button id="menu-button" class="">
+					<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+						<line id="line-top" x1="4" y1="6" x2="20" y2="6" />
+						<line id="line-middle" x1="4" y1="12" x2="20" y2="12" />
+						<line id="line-bottom" x1="4" y1="18" x2="20" y2="18" />
 					</svg>
 				</button>
 			</div>		
 		</div>
+			<div id="popdown">
+				<div class="navitem"><a href="showroom.html">Showroom</a></div>
+				<div style="opacity: 50%">・</div>
+				<div class="navitem"><a href="collections.html">Collections</a></div>
+				<div style="opacity: 50%">・</div>
+				<div class="navitem"><a href="about.html">Our Story</a></div>
+			</div>
+		</div>
 	</header>
 	<main>
 		<div class="section-one">
-			<div class="image-fader">
+<div class="image-fader">
 				<img class="fade-image" src="rm.webp" alt="Door Knob and Lock">
 				<img class="fade-image" src="thg.webp" alt="Image 1">
 				<img class="fade-image" src="am.webp" alt="Cabinet Knob">

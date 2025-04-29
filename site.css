@@ -36,6 +36,50 @@ button {
 	border: none;
 }
 
+#line-top, #line-middle, #line-bottom {
+	stroke: black;
+	stroke-width: 2;
+	transition: 0.1s ease;
+}
+
+.menu-icon-active #line-top {
+	transform-origin: 50% 50%;
+	transform: rotate(45deg) translateY(6px) scaleX(1.25);
+}
+
+.menu-icon-active #line-middle {
+	opacity: 0;
+}
+
+.menu-icon-active #line-bottom {
+	transform-origin: 50% 50%;
+	transform: rotate(-45deg) translateY(-6px) scaleX(1.25);
+}
+
+#popdown {
+	height: 0px;
+    visibility: hidden;
+	transition: height 0.3s ease, visibility 0.3s ease, padding 0.3s ease;
+	overflow-y: clip;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	gap: 6px;
+	padding-top: 0px;
+}
+
+.menu-icon-active #popdown {
+	visibility: visible;
+	padding-top: 20px;
+	height: 30px;
+}
+
+#popdown .navitem {
+	font-size: 10pt;
+	font-weight: 400;
+}
+
 #menu-overlay {
 	position: fixed;
 	top:0;
@@ -95,6 +139,9 @@ button {
 	display: none;
 }
 
+.hidden {
+	display: none;
+}
 @media screen and (max-width: 640px) {
 	.navbar {
 		display: none;
