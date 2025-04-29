@@ -11,7 +11,7 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 		  const images = document.querySelectorAll('.image-fader .fade-image');
-		  const fadeInterval = 5000; // Time each image is shown (in milliseconds) + transition time
+		  const fadeInterval = 7000; // Time each image is shown (in milliseconds) + transition time
 		  let currentImageIndex = 0;
 		
 		  if (images.length > 1) {
@@ -42,26 +42,48 @@
 		});
 	</script>
 	<style>
-		.body {
+		body {
 			display: flex;
 			flex-direction: column;
-			flex-wrap: nowrap;
-			justify-content: space-between;
-			height: 100%;
+			min-height: 100vh; /* Fallback and explicit viewport height */
 		}
 		
-		.content {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			row-gap: 30px;
+		header, footer {
+			//background-color: #f2f2f2;
+			flex-shrink: 0;
 		}
 		
+		header, footer, main {
+			//max-width: 1024px;
+		}
 		
+		main {
+			flex-grow: 1; /* Allows this element to grow and fill available space */
+			display: flex; /* Make main a flex container for its children */			
+			flex-direction: column; /* Stack children vertically */
+			overflow: overflow; /* Prevent main from overflowing, let children scroll */
+		}
+		
+		/* Style the first section (33% height of main) */
+		.section-one {
+			flex-basis: 75%;  /* Flexbox way to define initial size */
+			min-height: 300px;
+			padding: 3em;
+			box-sizing: border-box; /* Include padding in height */
+			//background: rgba(0, 0, 0, .1);
+		}
+		
+		/* Style the second section (67% height of main) */
+		.section-two {
+			flex-basis: 25%;  /* Flexbox way to define initial size */
+			box-sizing: border-box; /* Include padding in height */
+		}
+
 		.image-fader {
 			position: relative; /* Crucial for absolute positioning of children */
-			width: 600px;      /* Adjust to your image size */
-			height: 400px;     /* Adjust to your image size */
+			max-width: 85%;
+			margin: auto;
+			height: 100%;     /* Adjust to your image size */
 		}
 		
 		.fade-image {
@@ -85,7 +107,7 @@
 		
 
 		.tagline {
-			font-size: 36px;
+			font-size: 32px;
 			font-family: "Poppins", sans-serif;
 			font-weight: 200;
 			line-height: 1.25;
@@ -97,18 +119,18 @@
 			.tagline {
 				font-size: 24px;
 				//text-align: center;
+			}	
+			
+			.section-one {
+				min-height: 200px;
+				padding: 1em;
 			}
-		
-			.image-fader {
-				width: 80vw;
-				height: 300px;
-			}			
+	
 		}
 	
 	</style>
 </head>
 <body>
-<div class="body">
 	<header>
 		<div class="flexrow baseline">
 			<div class="logo">
@@ -129,26 +151,31 @@
 		</div>
 	</header>
 	<main>
-		<div class="content">
+		<div class="section-one">
 			<div class="image-fader">
-				<img class="fade-image" src="5.webp" alt="Image 1">
-				<img class="fade-image" src="1.png" alt="Image 1">
-				<img class="fade-image" src="2.png" alt="Image 2">
-				<img class="fade-image" src="4.png" alt="Image 4">
+				<img class="fade-image" src="rm.webp" alt="Door Knob and Lock">
+				<img class="fade-image" src="thg.webp" alt="Image 1">
+				<img class="fade-image" src="am.webp" alt="Cabinet Knob">
+				<img class="fade-image" src="tub.webp" alt="Image 2">
+				<img class="fade-image" src="bw.webp" alt="Door Knob and Lock">
 			</div>
+		</div>
+		<div class="section-two">
 			<div class="tagline">
 				Luxury Baths, Kitchens<br/>
 				& Architectural Hardware
-			</div>		
-		</div>		
+			</div>
+		</div>
 	</main>
+
+	<!-- <main>
+	</main> -->
 	<footer>
 		<div class="flexrow" style="font-size: 10pt" >
-		<div><a href="tel:713-644-8301">713.644.8301</a></div>
-		<div><a href="mailto:info@hollywoodhardware.com">info@hollywoodhardware.com</a></div>
-	</div>
+			<div><a href="mailto:reception@hollywoodhardware.com">reception@hollywoodhardware.com</a></div>
+			<div><a href="tel:713-644-8301">713.644.8301</a></div>
+		</div>
 	</footer>
-</div>
 <div id="menu-overlay" class="offscreen-left">
 	<div style="padding: 30px">
 		<div style="display: flex; flex-direction: column; gap: 50px">

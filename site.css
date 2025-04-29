@@ -2,7 +2,7 @@ html {
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
-	background: rgba(248, 248, 248, 1);
+	background: rgba(242, 242, 242, 1);
 	color: rgb(78, 80, 83)
  }
  
@@ -13,12 +13,12 @@ body {
 	font-family: "Poppins", sans-serif;
 	font-weight: 300;
 	font-style: normal;
-}
-
-.body {
 	 max-width: 1024px;
 	 margin-left: auto;
 	 margin-right: auto;
+}
+
+.body {
  }
 
 
