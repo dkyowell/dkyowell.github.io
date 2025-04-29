@@ -72,11 +72,10 @@ button {
 .menu-icon-active #popdown {
 	visibility: visible;
 	padding-top: 20px;
-	height: 30px;
+	height: 20px;
 }
 
 #popdown .navitem {
-	font-size: 10pt;
 	font-weight: 400;
 }
 
