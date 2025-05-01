@@ -27,12 +27,14 @@
 		.vendor {
 			//width: 100%;
 			padding: 12px;
-			background: rgba(0, 0, 0, 0.06);
-			
+//			background: rgba(0, 0, 0, 0.06);			
+//			background: rgba(255, 255, 255, 0.26);			
+			background: rgba(124, 124, 124, 0.1);			
+		    border-radius: 10px; /* Adjust the radius value as needed */
 		}
 		
 		.vendor-heading {
-			font-weight: 600;
+			font-weight: 500;
 		}
 		
 		.vendor-row {
@@ -44,13 +46,20 @@
 		}
 		
 		.vendor-row div {
-			min-width: 200px;
 		}
-		
-		.vendor-row img {
+		.vendor-image {
+			min-width: 200px;
+			max-width: 200px;
+			height: 180px;
+		    display: flex;
+			justify-content: center; /* Centers horizontally */
+			align-items: center;    /* Centers vertically */
+			padding-top: 10px;
+		}		
+		.vendor-image img {
 			object-fit: contain;
-			max-width: 200px; 
-			max-height: 180px;
+			width: 100%;; 
+			height: 100%;; 
 		}
 		
 		.vendor-detail {
@@ -62,7 +71,7 @@
 		
 		.vendor-url {
 			padding-top: 10px;
-			font-weight: 600;
+			font-weight: 400;
 		}
 		
 		.vendor-blurb {
@@ -81,6 +90,13 @@
 				align-items: center;
 			}
 			
+			.vendor-image {
+				min-width: 200px;
+				max-width: 200px;
+				height: 140px;
+				padding-top: 10px;
+			}		
+
 		}
 
 	</style>
@@ -118,7 +134,7 @@
 	</div>
 	</header>
 	<main>
-	<div style="display: flex; flex-direction: column; gap: 30px">
+	<div style="display: flex; flex-direction: column; gap: 20px">
 		<div style="font-weight: 300">
 			We are proud to partner with these manufacturers of quality and uniquely designed plumbing and hardware fixtures from around the world. We have a strong emphasis on product made in the Americas, the UK, and Europe.
 		</div>
@@ -134,7 +150,7 @@
 						Armac Martin is a UK maker of exquisite cabinet grilles, cabinet hardware, and home accessories. They are especially loved for their unique handcrafted aged finishes.
 					</div>
 					<div class="vendor-url">
-						<a href="https://www.armacmartin.com">Visit Website</a>					
+						<a href="https://www.armacmartin.com">www.armacmartin.com</a>					
 					</div>
 				</div>
 			</div>
@@ -143,14 +159,14 @@
 			<div class="vendor-heading">Rocky Mountain Hardware</div>
 			<div class="vendor-row">
 				<div class="vendor-image">
-					<img src="rm.webp"/>
+					<img src="rm2.webp"/>
 				</div>
 				<div class="vendor-detail">
 					<div class="vendor-blurb">
 						Crafted in the USA from art-grade bronze, Rocky Mountain Hardware offers exquisite, handcrafted pieces that elevate any space. Experience the timeless beauty and enduring quality of their unique designs, each with a hand-applied patina that deepens over time.
 					</div>
 					<div class="vendor-url">
-						<a href="https://www.rockymountainhardware.com">Visit Website</a>
+						<a href="https://www.rockymountainhardware.com">www.rockymountainhardware.com</a>
 					</div>
 				</div>
 			</div>
@@ -167,7 +183,7 @@
 						Julien sinks are recognized for their high-quality stainless steel craftsmanship, often 16-gauge, offering durability inspired by commercial kitchens. They are known for customization options and innovative designs, including workstation sinks with integrated accessories. Julien provides a range of styles, focusing on both functionality and a refined aesthetic for the home. Made in Canada.
 					</div>
 					<div class="vendor-url">
-						<a href="https://www.homerefinements.ca/en_us">Visit Website</a>
+						<a href="https://www.homerefinements.ca/en_us">www.homerefinements.ca</a>
 					</div>
 				</div>
 			</div>
@@ -184,7 +200,7 @@
 						California Faucets handcrafts customizable, high-quality faucets and shower fittings. They offer innovative products, unique designs and a wide range of artisan finishes paired with expertise and exceptional service. Made in California.
 					</div>
 					<div class="vendor-url">
-						<a href="https://www.calfaucets.com">Visit Website</a>
+						<a href="https://www.calfaucets.com">www.calfaucets.com</a>
 					</div>
 				</div>
 			</div>
@@ -201,7 +217,7 @@
 						Axor is a German manufacturer of high-end bathroom and kitchen fixtures with a focus on avant-garde design and exceptional quality. Collaborating with renowned designers, Axor offers personalized solutions and innovative technologies, striving for perfection in form and function while also emphasizing sustainability and resource efficiency.
 					</div>
 					<div class="vendor-url">
-						<a href="https://www.axor-design.com/us">Visit Website</a>
+						<a href="https://www.axor-design.com/us">www.axor-design.com</a>
 					</div>
 				</div>
 			</div>
