@@ -28,15 +28,24 @@
 			display: flex;
 			flex-direction: row;
 			//overflow: auto;
-			gap: 10px;
+			gap: 20px;
 			height: 200px;
-			font-size: 11pt
+			font-size: 11pt;
 		}
 		
 		.vendor-row img {
+			padding-top: 10px;
+			padding-bottom: 10px;
 			object-fit: contain;
 			height: 100%
 			
+		}
+		
+		.blurb {
+			display: flex; 
+			flex-direction: column;
+			align-content: center;
+			justify-content: space-around;
 		}
 
 		
@@ -153,10 +162,8 @@
 				<div>
 					<img src="am.webp"/ height="200px" width="200px">
 				</div>
-				<div>
+				<div class="blurb">
 					Armac Martin is a UK maker of exquisite cabinet grilles, cabinet hardware, and home accessories. They are especially loved for their unique handcrafted aged finishes.
-					Armac Martin is a UK maker of exquisite cabinet grilles, cabinet hardware, and home accessories. They are especially loved for their unique handcrafted aged finishes.
-					<br>
 					<a style="font-weight: 400">www.armacmartin.com</a>
 					
 				</div>
@@ -168,7 +175,7 @@
 				<div style="max-width: 200px;">
 					<img style="object-fit: contain; height: 100%" src="rm.webp" />
 				</div>
-				<div style="width=100px;font-size: 11pt">
+				<div class="blurb">
 					Crafted in the USA from art-grade bronze, Rocky Mountain Hardware offers exquisite, handcrafted pieces that elevate any space. Experience the timeless beauty and enduring quality of their unique designs, each with a hand-applied patina that deepens over time.
 					<br>
 					<a style="font-weight: 400">www.rockymountainhardware.com</a>
@@ -180,9 +187,9 @@
 			<div class="collection-heading">Julien</div>
 			<div class="vendor-row">
 				<div style="max-width: 200px;">
-					<img src="ju.png" />
+					<img style="object-fit: contain" src="ju.webp"  />
 				</div>
-				<div style="width=100px;font-size: 11pt">
+				<div class="blurb">
 					Julien sinks are recognized for their high-quality stainless steel craftsmanship, often 16-gauge, offering durability inspired by commercial kitchens. They are known for customization options and innovative designs, including workstation sinks with integrated accessories. Julien provides a range of styles, focusing on both functionality and a refined aesthetic for the home. Made in Canada.
 					<br>
 					<a style="font-weight: 400">www.julien.ca</a>
