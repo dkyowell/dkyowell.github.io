@@ -8,7 +8,8 @@ html {
 	background-position: center;
 	background-size: cover;
 	background-attachment: fixed;
-	color: rgba(255, 255, 255, .90)
+	color: rgba(255, 255, 255, .90);
+	stroke: rgba(255, 255, 255, .90)
  }
  
 body {
@@ -42,7 +43,7 @@ button {
 }
 
 #line-top, #line-middle, #line-bottom {
-	stroke: black;
+	stroke: white;
 	stroke-width: 2;
 	transition: 0.1s ease;
 }
