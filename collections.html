@@ -24,28 +24,48 @@
 			background: rgba(0, 0, 0, 0.06);
 		}
 		
-		.vendor-row {
-			display: flex;
-			flex-direction: row;
-			//overflow: auto;
-			gap: 20px;
-			height: 200px;
-			font-size: 11pt;
-		}
-		
-		.vendor-row img {
-			padding-top: 10px;
-			padding-bottom: 10px;
-			object-fit: contain;
-			height: 100%
+		.vendor {
+			//width: 100%;
+			padding: 12px;
+			background: rgba(0, 0, 0, 0.06);
 			
 		}
 		
-		.blurb {
+		.vendor-heading {
+			font-weight: 600;
+		}
+		
+		.vendor-row {
+			display: flex;
+			flex-direction: row;
+			gap: 40px;
+			font-size: 11pt;
+			align-items: center;
+		}
+		
+		.vendor-row div {
+			min-width: 200px;
+		}
+		
+		.vendor-row img {
+			object-fit: contain;
+			max-width: 200px; 
+			max-height: 180px;
+		}
+		
+		.vendor-detail {
 			display: flex; 
 			flex-direction: column;
 			align-content: center;
 			justify-content: space-around;
+		}
+		
+		.vendor-url {
+			padding-top: 10px;
+			font-weight: 600;
+		}
+		
+		.vendor-blurb {
 		}
 
 		
@@ -53,6 +73,14 @@
 			.collection {
 				grid-template-columns: repeat(2, 1fr);
 			}
+			.vendor-row {
+				display: flex;
+				flex-direction: column;
+				gap: 20px;
+				font-size: 11pt;
+				align-items: center;
+			}
+			
 		}
 
 	</style>
@@ -92,16 +120,99 @@
 	<main>
 	<div style="display: flex; flex-direction: column; gap: 30px">
 		<div style="font-weight: 300">
-			We are proud to partner with these manufacturers of distinctive plumbing and hardware fixtures
-			from around the world. 
+			We are proud to partner with these manufacturers of quality and uniquely designed plumbing and hardware fixtures from around the world. We have a strong emphasis on product made in the Americas, the UK, and Europe.
 		</div>
+
+		<div class="vendor">
+			<div class="vendor-heading">Armac Martin</div>
+			<div class="vendor-row">
+				<div class="vendor-image">
+					<img src="am.webp"/>
+				</div>
+				<div class="vendor-detail">
+					<div class="vendor-blurb">
+						Armac Martin is a UK maker of exquisite cabinet grilles, cabinet hardware, and home accessories. They are especially loved for their unique handcrafted aged finishes.
+					</div>
+					<div class="vendor-url">
+						<a href="https://www.armacmartin.com">Visit Website</a>					
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="vendor">
+			<div class="vendor-heading">Rocky Mountain Hardware</div>
+			<div class="vendor-row">
+				<div class="vendor-image">
+					<img src="rm.webp"/>
+				</div>
+				<div class="vendor-detail">
+					<div class="vendor-blurb">
+						Crafted in the USA from art-grade bronze, Rocky Mountain Hardware offers exquisite, handcrafted pieces that elevate any space. Experience the timeless beauty and enduring quality of their unique designs, each with a hand-applied patina that deepens over time.
+					</div>
+					<div class="vendor-url">
+						<a href="https://www.rockymountainhardware.com">Visit Website</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="vendor">
+			<div class="vendor-heading">Julien</div>
+			<div class="vendor-row">
+				<div class="vendor-image">
+					<img src="ju.webp"/>
+				</div>
+				<div class="vendor-detail">
+					<div class="vendor-blurb">
+						Julien sinks are recognized for their high-quality stainless steel craftsmanship, often 16-gauge, offering durability inspired by commercial kitchens. They are known for customization options and innovative designs, including workstation sinks with integrated accessories. Julien provides a range of styles, focusing on both functionality and a refined aesthetic for the home. Made in Canada.
+					</div>
+					<div class="vendor-url">
+						<a href="https://www.homerefinements.ca/en_us">Visit Website</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="vendor">
+			<div class="vendor-heading">California Faucets</div>
+			<div class="vendor-row">
+				<div class="vendor-image">
+					<img src="ca.webp"/>
+				</div>
+				<div class="vendor-detail">
+					<div class="vendor-blurb">
+						California Faucets handcrafts customizable, high-quality faucets and shower fittings. They offer innovative products, unique designs and a wide range of artisan finishes paired with expertise and exceptional service. Made in California.
+					</div>
+					<div class="vendor-url">
+						<a href="https://www.calfaucets.com">Visit Website</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="vendor">
+			<div class="vendor-heading">Axor</div>
+			<div class="vendor-row">
+				<div class="vendor-image">
+					<img src="ax.webp"/>
+				</div>
+				<div class="vendor-detail">
+					<div class="vendor-blurb">
+						Axor is a German manufacturer of high-end bathroom and kitchen fixtures with a focus on avant-garde design and exceptional quality. Collaborating with renowned designers, Axor offers personalized solutions and innovative technologies, striving for perfection in form and function while also emphasizing sustainability and resource efficiency.
+					</div>
+					<div class="vendor-url">
+						<a href="https://www.axor-design.com/us">Visit Website</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
 		<div>
 			<div class="collection-heading">Bath & Kitchen Fixtures</div>
 			<div class="collection">
-				<div>Axor</div>
 				<div>Bain Ultra</div>
 				<div>Blanco</div>
-				<div>California Faucets</div>
 				<div>Cheviot</div>
 				<div>Dornbracht</div>
 				<div>Franke</div>
@@ -111,7 +222,6 @@
 				<div>Horus</div>
 				<div>Rohl</div>
 				<div>Hydro Systems</div>
-				<div>Julien</div>
 				<div>Kallista</div>
 				<div>Kast</div>
 				<div>Link-A-Sink</div>
@@ -136,7 +246,6 @@
 			<div class="collection">
 				<div>Accurate</div>
 				<div>Alno</div>
-				<div>Armac Martin</div>
 				<div>Ashley Norton</div>
 				<div>Baldwin</div>
 				<div>Classic Brass</div>
@@ -148,57 +257,13 @@
 				<div>Hardware Renaissance</div>
 				<div>Krown Labs</div>
 				<div>Nest Studio</div>
-				<div>Rocky Mountain</div>
 				<div>Schaub</div>
 				<div>Sietto</div>
 				<div>Top Knobs</div>
 				<div>Turnstyle Designs</div>
 				<div>Water Street Brass</div>
 			</div>
-		</div>
-		<div>
-			<div class="collection-heading">Armac Martin</div>
-			<div class="vendor-row">
-				<div>
-					<img src="am.webp"/ height="200px" width="200px">
-				</div>
-				<div class="blurb">
-					Armac Martin is a UK maker of exquisite cabinet grilles, cabinet hardware, and home accessories. They are especially loved for their unique handcrafted aged finishes.
-					<a style="font-weight: 400">www.armacmartin.com</a>
-					
-				</div>
-			</div>
-		</div>
-		<div>
-			<div class="collection-heading">Rocky Mountain Hardware</div>
-			<div class="vendor-row">
-				<div style="max-width: 200px;">
-					<img style="object-fit: contain; height: 100%" src="rm.webp" />
-				</div>
-				<div class="blurb">
-					Crafted in the USA from art-grade bronze, Rocky Mountain Hardware offers exquisite, handcrafted pieces that elevate any space. Experience the timeless beauty and enduring quality of their unique designs, each with a hand-applied patina that deepens over time.
-					<br>
-					<a style="font-weight: 400">www.rockymountainhardware.com</a>
-					
-				</div>
-			</div>
-		</div>
-		<div>
-			<div class="collection-heading">Julien</div>
-			<div class="vendor-row">
-				<div style="max-width: 200px;">
-					<img style="object-fit: contain" src="ju.webp"  />
-				</div>
-				<div class="blurb">
-					Julien sinks are recognized for their high-quality stainless steel craftsmanship, often 16-gauge, offering durability inspired by commercial kitchens. They are known for customization options and innovative designs, including workstation sinks with integrated accessories. Julien provides a range of styles, focusing on both functionality and a refined aesthetic for the home. Made in Canada.
-					<br>
-					<a style="font-weight: 400">www.julien.ca</a>
-					
-				</div>
-			</div>
-		</div>
-		
-		
+		</div>		
 	</div>
 	</main>
 	<script src="common.js"></script>
