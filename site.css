@@ -1,9 +1,15 @@
 html {
+	background-image: url("background-c.webp");
+	background-size: cover;
+	background-position: center;
+	background-attachment: initial;
 	height: 100%;
 	margin: 0px;
 	padding: 0px;
-	background: rgba(242, 242, 242, 1);
-	color: rgba(44, 44, 44, 1);
+	background: color(display-p3 1 1 1);
+	//background: #213448;
+	//color: rgba(44, 44, 44, 1);
+	color: rgba(13, 22, 30, 0.852);
  }
  
 body {
