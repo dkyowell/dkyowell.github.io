@@ -48,6 +48,10 @@ button {
 	transition: 0.1s ease;
 }
 
+.selected {
+	color: rgb(181, 0, 0);
+}
+
 .menu-icon-active #line-top {
 	transform-origin: 50% 50%;
 	transform: rotate(45deg) translateY(6px) scaleX(1.25);

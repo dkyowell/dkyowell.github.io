@@ -14,32 +14,38 @@
 		}
 		
 		.categories {
-			display: flex;
-			flex-direction: row; 
-			justify-content: space-around;
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
 			padding-bottom: 20px;
 			font-weight: 600;
+			gap: 10px;
 		}
 
 		.categories button {
-			font-weight: 600;
+			width: 100%;
+			font-family: "Poppins", sans-serif;
+			font-weight: 300;
+			font-style: normal;
+			//font-weight: 400;
 			font-size: 12pt;
 		}
 
 		.categories button:hover {
-			font-size: 12pt;
-			color: rgb(181, 0, 0);
+  	  		cursor: pointer;
 		}
 		
-		.selected {
-			color: rgb(181, 0, 0);
+		.categories .selected {
+			color: revert;
+			border-bottom: 1px solid rgb(102, 19, 19); 
+			/* border-left: 1px solid rgb(223, 28, 28); 
+			border-right: 1px solid rgb(223, 28, 28);  */
 		}
 
 			
 		.collection {
 			display: grid;
 			row-gap: 8px;
-			grid-template-columns: repeat(3, 1fr);
+			grid-template-columns: repeat(2, 1fr);
 			width: 100%;
 		}
 		
@@ -194,7 +200,7 @@
 		</div>
 		<div class="navbar">
 			<div class="navitem"><a href="showroom.html">Showroom</a></div>
-			<div class="navitem"><a href="collections.html">Collections</a></div>
+			<div class="navitem selected">Collections</div>
 			<div class="navitem"><a href="about.html">Our Story</a></div>
 		</div>
 		<div class="navbutton">
@@ -220,7 +226,7 @@
 	<div class="categories">
 		<div>
 			<button id="featured-button" class="selected">
-				Featured
+				Featured Brands
 			</button>
 		</div>
 		<div>
@@ -275,14 +281,21 @@
 
 		<div class="plumbing hide">
 			<div class="collection">
+				<span>German maker of bath and kitchen fixtures.</span>
+				<span>German maker of bath and kitchen fixtures.</span>
+				<span>German maker of bath and kitchen fixtures.</span>
 				<div>Axor</div>
-				<div>Bain Ultra</div>
+				<div>Bates Sinks</div><div>German maker of bath and kitchen fixtures.</div>
+				
+				<div>Bain Ultra</div><div>German maker of bath and kitchen fixtures.</div>
 				<div>Blanco</div>
 				<div>California Faucets</div>
 				<div>Cheviot</div>
 				<div>Dornbracht</div>
 				<div>Franke</div>
 				<div>Franz Viegener</div>
+				<div>Ginger</div>
+				
 				<div>Hansgrohe</div>
 				<div>Horus</div>
 				<div>Hydro Systems</div>
