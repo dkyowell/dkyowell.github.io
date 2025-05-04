@@ -38,6 +38,8 @@ a:hover {
 }
 
 button {
+	-webkit-appearance: none;
+	appearance: none; /* Standard property for cross-browser compatibility */
 	background: none;
 	border: none;
 }
