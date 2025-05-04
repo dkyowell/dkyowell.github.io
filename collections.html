@@ -41,14 +41,42 @@
 			border-right: 1px solid rgb(223, 28, 28);  */
 		}
 
-			
-		.collection {
+		.grid-container {
 			display: grid;
-			row-gap: 8px;
-			grid-template-columns: repeat(2, 1fr);
-			width: 100%;
+			/* Define your columns here, for example: */
+			grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+			gap: 1px; /* Optional: adds a small gap between grid items */
 		}
 		
+		/* Style for the odd rows */
+		.collection > *:nth-child(odd) {
+			padding: 10px;
+			background-color: #f6f6f6; /* Light gray background for odd rows */
+		}
+		
+		/* Style for the even rows */
+		.collection > *:nth-child(even) {
+			padding: 10px;
+			background-color: #ffffff; /* White background for even rows */
+		}
+		
+		/* Optional: Add some padding to the grid items */
+		.grid-container > * {
+		  padding: 10px;
+		}
+
+		.brand {
+			display: grid;
+			//row-gap: 12px;
+  		  	grid-template-columns: 33% 67%; /* Defines two columns with specified widths
+			width: 100%; */
+			font-weight: 400;
+		}
+		
+		.brand > *:nth-child(2) {
+			//font-size: 10pt;
+			font-weight: 200;
+		}
 		
 		.featured { /* For filtering by category */
 			//height: 240px;
@@ -59,14 +87,7 @@
 			display: grid;
 			grid-template-columns: repeat(2, 1fr);
 			gap: 1px;
-		}
-		
-		.featured-cell {
-			//min-width: 200px;
-			position: relative; /* Needed for absolute positioning of text */
-		}
-
-
+		}		
 
 		.featured-cell img {
 			display: block;
@@ -75,28 +96,7 @@
 			height: auto; */
 			/* width: 100%; /* Make images responsive */
 		}
-
-		.featured-cell-darken {
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background: rgba(0, 0, 0, 0.504);
-		}
 		
-		/* .www {
-			position: absolute;
-			top: 90%;
-			left: 50%;
-			transform: translate(-50%, -50%); 
-			color: white;
-			font-size: clamp(7pt, 2vw, 12pt);
-			text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-			width: 90%;
-			max-height: 90%;
-		} */
-
 		@media screen and (max-width: 640px) {
 			.featured-flex {
 				grid-template-columns: repeat(1, 1fr);
@@ -104,90 +104,7 @@
 			.featured-flex {
 				flex-direction: column;
 			}
-			
-			.text-overlay {
-			font-size: 11pt;
-			}
-			
-			.featured-cell-one {
-				/* height: 200px; */
-			}
-			
-			.featured-cell-two {
-				/* height: 200px; */
-			}
-			
-
 		}
-		
-
-
-
-		.vendor-heading {
-			font-weight: 500;
-		}
-		
-		.vendor-row {
-			display: flex;
-			flex-direction: row;
-			gap: 40px;
-			font-size: 11pt;
-			align-items: center;
-		}
-		
-		.vendor-image {
-			min-width: 200px;
-			max-width: 200px;
-			height: 180px;
-		    display: flex;
-			justify-content: center; /* Centers horizontally */
-			align-items: center;    /* Centers vertically */
-			padding-top: 20px;
-			padding-bottom: 10px;
-		}		
-		.vendor-image img {
-			object-fit: contain;
-			width: 100%;; 
-			height: 100%;; 
-		}
-		
-		.vendor-detail {
-			display: flex; 
-			flex-direction: column;
-			align-content: center;
-			justify-content: space-around;
-		}
-		
-		.vendor-url {
-			padding-top: 10px;
-			font-weight: 400;
-		}
-		
-		.vendor-blurb {
-		}
-
-		
-		@media screen and (max-width: 640px) {
-			.collection {
-				grid-template-columns: repeat(2, 1fr);
-			}
-			.vendor-row {
-				display: flex;
-				flex-direction: column;
-				gap: 20px;
-				font-size: 11pt;
-				align-items: center;
-			}
-			
-			.vendor-image {
-				min-width: 200px;
-				max-width: 200px;
-				height: 140px;
-				padding-top: 10px;
-			}		
-
-		}
-
 	</style>
 	<script></script>
 </head>
@@ -243,7 +160,7 @@
 		
 
 	<div style="display: flex; flex-direction: column; gap: 20px">
-		<div class="featured">
+		<div class="featured show">
 			<div class="featured-flex">
 				<div class="featured-cell">
 					<a href="https://www.watermark-designs.com">
@@ -281,69 +198,238 @@
 
 		<div class="plumbing hide">
 			<div class="collection">
-				<span>German maker of bath and kitchen fixtures.</span>
-				<span>German maker of bath and kitchen fixtures.</span>
-				<span>German maker of bath and kitchen fixtures.</span>
-				<div>Axor</div>
-				<div>Bates Sinks</div><div>German maker of bath and kitchen fixtures.</div>
-				
-				<div>Bain Ultra</div><div>German maker of bath and kitchen fixtures.</div>
-				<div>Blanco</div>
-				<div>California Faucets</div>
-				<div>Cheviot</div>
-				<div>Dornbracht</div>
-				<div>Franke</div>
-				<div>Franz Viegener</div>
-				<div>Ginger</div>
-				
-				<div>Hansgrohe</div>
-				<div>Horus</div>
-				<div>Hydro Systems</div>
-				<div>Julien</div>
-				<div>Kallista</div>
-				<div>Kartners</div>
-				<div>Kast</div>
-				<div>Link-A-Sink</div>
-				<div>Marzi</div>
-				<div>Milla</div>
-				<div>Mr. Steam</div>
-				<div>Newport Brass</div>
-				<div>Perrin & Rowe</div>
-				<div>Phylrich</div>
-				<div>Rohl</div>
-				<div>Samuel Heath</div>
-				<div>Shaws</div>
-				<div>THG Paris</div>
-				<div>Toto</div>
-				<div>Victoria + Albert</div>
-				<div>Waterstone</div>
-				<div>Watermark Designs</div>
+				<div class="brand">
+					<div>Axor</div>
+					<div>UK Made Cabinet Grilles & Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div>Bates Sinks</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Bain Ultra</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Blanco</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>California Faucets</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Cheviot</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Dornbracht</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Franke</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Franz Viegener</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Ginger</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Hansgrohe</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Horus</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Hydro Systems</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Julien</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Kallista</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Kartners</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Kast</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Link-A-Sink</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Marzi</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Milla</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Mr. Steam</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Newport Brass</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Perrin & Rowe</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Phylrich</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Rohl</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Samuel Heath</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Perrin & Rowe</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Shaws</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>THG Paris</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Toto</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Victoria + Albert</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Waterstone</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
+				<div class="brand">
+					<div>Watermark Designs</div>
+					<div>German maker of bath and kitchen fixtures.</div>
+				</div>
 			</div>
 		</div>
 		<div class="hardware hide">
 			<div class="collection">
-				<div>Armac Martin</div>
-				<div>Atlas Homewares</div>
-				<div>Ashley Norton</div>
-				<div>Baldwin</div>
-				<div>Classic Brass</div>
-				<div>Colonial Bronze</div>
-				<div>Edgar Berebi</div>
-				<div>FSB</div>
-				<div>Ged Kenent</div>
-				<div>Hapny</div>
-				<div>Hamilton Sinkler</div>
-				<div>Hardware Renaissance</div>
-				<div>Krown Labs</div>
-				<div>Nest Studio</div>
-				<div>RK International</div>
-				<div>Rocky Mountain Hardware</div>
-				<div>Samuel Heath</div>
-				<div>Schaub</div>
-				<div>Top Knobs</div>
-				<div>Turnstyle Designs</div>
-				<div>Vesta</div>
-				<div>Water Street Brass</div>
+				<div class="brand">
+					<div><a href="https://www.armacmartin.com">Armac Martin</a></div>
+					<div>UK Made Cabinet Grilles & Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.atlashomewares.com">Atlas Homewares</a></div>
+					<div>Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.ashleynorton.com">Ashley Norton</a></div>
+					<div>Bronze and Brass Door and Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.baldwinhardware.com">Baldwin</a></div>
+					<div>Brass Door and Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.classic-brass.com">Classic Brass</a></div>
+					<div>US Made Door and Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.colonialbronze.com">Colonial Bronze</a></div>
+					<div>Brass Cabinet Hardware. Made in the US.</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://aachardware.com">Edgar Berebi</a></div>
+					<div>Ornately Designed Cabinet Hardware. Made in the US.</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.fsbna.com/us/">FSB</a></div>
+					<div>German Made Stainless Steel Door Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://gedkennett.co.uk">Ged Kennett</a></div>
+					<div>UK Handmade Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://hapnyhome.com">Hapny</a></div>
+					<div>Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://hamiltonsinkler.com">Hamilton Sinkler</a></div>
+					<div>Brass Door and Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://hardwarerenaissance.com">Hardware Renaissance</a></div>
+					<div>Bronze and Iron Door and Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://krownlab.com">Krown Lab</a></div>
+					<div>Sliding Barn Door Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://neststudiocollection.com">Nest Studio</a></div>
+					<div>Unique and Eclectic Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://rkintl.com">RK International</a></div>
+					<div>Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.rockymountainhardware.com">Rocky Mountain Hardware</a></div>
+					<div>US Made Bronze Door and Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.samuel-heath.com/us">Samuel Heath</a></div>
+					<div>Brass Door Hardware. Made in the UK.</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://schaubandcompany.com">Schaub</a></div>
+					<div>Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://sietto.com">Sietto</a></div>
+					<div>US Made Cabinet Hardware Featuring Glass Designs</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://tannerscraft.com">Tanner's Craft</a></div>
+					<div>US Made Cabinet Hardware and Door Pulls With Leather Designs</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.topknobs.com">Top Knobs</a></div>
+					<div>Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.turnstyledesigns.com">Turnstyle Designs</a></div>
+					<div>UK Made Door and Cabinet Hardware With Leather Designs</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.vestafinehardware.com">Vesta</a></div>
+					<div>Cabinet Hardware</div>
+				</div>
+				<div class="brand">
+					<div><a href="https://www.waterstreetbrass.com">Water Street Brass</a></div>
+					<div>US Made Brass Door and Cabinet Hardware</div>
+				</div>
 			</div>		
 		</div>
 	</div>
