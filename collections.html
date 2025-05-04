@@ -32,8 +32,7 @@
 			color: rgba(100, 100, 100, 1);
 		}
 		
-		.categories .selected {
-			color: revert;
+		.categories .selected-category {
 			border-bottom: 1px solid rgb(102, 19, 19); 
 			/* border-left: 1px solid rgb(223, 28, 28); 
 			border-right: 1px solid rgb(223, 28, 28);  */
@@ -95,7 +94,12 @@
 			/* width: 100%; /* Make images responsive */
 		}
 		
+
 		@media screen and (max-width: 640px) {
+			main {
+				padding-left: 0em;
+				padding-right: 0em;
+			}
 			.featured-flex {
 				grid-template-columns: repeat(1, 1fr);
 			}
@@ -140,7 +144,7 @@
 	<main>
 	<div class="categories">
 		<div>
-			<button id="featured-button" class="selected">
+			<button id="featured-button" class="selected-category">
 				Featured
 			</button>
 		</div>
@@ -437,9 +441,9 @@
 		const hardwareButton = document.getElementById('hardware-button');
 		const plumbingButton = document.getElementById('plumbing-button');
 		featuredButton.addEventListener('click', function () {
-			featuredButton.classList.add('selected');
-			hardwareButton.classList.remove('selected');
-			plumbingButton.classList.remove('selected');
+			featuredButton.classList.add('selected-category');
+			hardwareButton.classList.remove('selected-category');
+			plumbingButton.classList.remove('selected-category');
 			const featured = document.querySelectorAll('.featured');
 			for (let i = 0; i < featured.length; i++) {
 				const element = featured[i];
@@ -460,9 +464,9 @@
 			};
 		});
 		hardwareButton.addEventListener('click', function () {
-			featuredButton.classList.remove('selected');
-			hardwareButton.classList.add('selected');
-			plumbingButton.classList.remove('selected');
+			featuredButton.classList.remove('selected-category');
+			hardwareButton.classList.add('selected-category');
+			plumbingButton.classList.remove('selected-category');
 			
 			const featured = document.querySelectorAll('.featured');
 			for (let i = 0; i < featured.length; i++) {
@@ -484,9 +488,9 @@
 			};
 		});
 		plumbingButton.addEventListener('click', function () {
-			featuredButton.classList.remove('selected');
-			hardwareButton.classList.remove('selected');
-			plumbingButton.classList.add('selected');
+			featuredButton.classList.remove('selected-category');
+			hardwareButton.classList.remove('selected-category');
+			plumbingButton.classList.add('selected-category');
 			const featured = document.querySelectorAll('.featured');
 			for (let i = 0; i < featured.length; i++) {
 				const element = featured[i];
