@@ -22,25 +22,15 @@
 			font-family: "Poppins", sans-serif;
 			font-weight: 300;
 			font-style: normal;
-			//font-weight: 400;
 			font-size: 12pt;
-			cursor: pointer;
 			color: rgba(100, 100, 100, 1);
+			cursor: pointer;
 		}
 		
 		.categories .selected-category {
 			border-bottom: 1px solid rgb(102, 19, 19); 
-			/* border-left: 1px solid rgb(223, 28, 28); 
-			border-right: 1px solid rgb(223, 28, 28);  */
 		}
 
-		.grid-container {
-			display: grid;
-			/* Define your columns here, for example: */
-			grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-			gap: 1px; /* Optional: adds a small gap between grid items */
-		}
-		
 		/* Style for the odd rows */
 		.collection > *:nth-child(odd) {
 			background-color: #f6f6f6; /* Light gray background for odd rows */
@@ -51,11 +41,15 @@
 			background-color: #ffffff; /* White background for even rows */
 		}
 		
+
+		
 		.brand {
 			padding: 1em;
 			display: grid;
-			grid-template-columns: 33% 67%;
+			grid-template-columns: 33% auto;
+			cursor: pointer;
 		}
+		
 		
 		.brand-name {
 			cursor: pointer;
@@ -64,20 +58,20 @@
 		
 		.brand-desc {
 			font-weight: 200;
+			transition: opacity 0.3s ease;
 		}
 		
 		.brand-web {
+			font-weight: 200;
+			transition: opacity 0.3s ease;
 //			color: var(--primary-color);
-			font-weight: 400;
+			/* font-weight: 400; */
 		}
 		
-		.brand-name:hover {
+		/* .brand-name:hover {
 			color: var(--primary-color);
-		}
+		} */
 		
-		.brand > *:nth-child(2) {
-			//font-size: 10pt;
-		}
 		
 		.featured { /* For filtering by category */
 			//height: 240px;
@@ -160,6 +154,11 @@
 			.featured-flex {
 				flex-direction: column;
 			}
+			
+			.brand {
+				grid-template-columns: auto;
+			}
+
 		}
 	</style>
 	<script></script>
@@ -281,18 +280,18 @@
 
 		<div class="hardware">
 			<div class="collection">
-				<div class="brand">
-					<div class="brand-name" id="armac">Armac Martin</div>
+				<div class="brand" id="armac">
+					<div class="brand-name">Armac Martin</div>
 					<div class="brand-desc" id="desc-armac">UK Made Cabinet Grilles & Cabinet Hardware</div>
 					<div class="brand-web hide" id="web-armac"><a href="https://www.armacmartin.com">www.armacmartin.com</a></div>
 				</div>
-				<div class="brand">
-					<div class="brand-name" id="atlas">Atlas Homewares</div>
+				<div class="brand" id="atlas">
+					<div class="brand-name">Atlas Homewares</div>
 					<div class="brand-desc" id="desc-atlas">Cabinet Hardware</div>
 					<div class="brand-web hide" id="web-atlas"><a href="https://www.atlashomewares.com">www.atlashomewares.com</a></div>
 				</div>
-				<div class="brand">
-					<div class="brand-name" id="ashley">Ashley Norton</div>
+				<div class="brand" id="ashley">
+					<div class="brand-name">Ashley Norton</div>
 					<div class="brand-desc" id="desc-ashley">Bronze and Brass Door and Cabinet Hardware</div>
 					<div class="brand-web hide" id="web-ashley"><a href="https://www.ashleynorton.com">www.ashleynorton.com</a></div>
 				</div>
@@ -638,7 +637,7 @@
 			setCategory(category);
 		}
 		
-		const array = document.querySelectorAll('.brand-name');
+		const array = document.querySelectorAll('.brand');
 		for (let i = 0; i < array.length; i++) {
 			array[i].addEventListener('click', function() {
 				const web = document.querySelectorAll('.brand-web');
@@ -667,8 +666,9 @@
 			console.log("The current number is:", element.id);			
 			element.addEventListener('click', function() {				
 				const overlayArray = document.querySelectorAll('.overlay-background');
+				const clicked = this;
 				overlayArray.forEach(function(element) {
-					if (element.id != this.id) {
+					if (element.id != clicked.id) {
 						element.classList.remove('enabled');
 						const text = document.querySelector(`#${element.id}-text`);
 						text.classList.remove('enabled');
