@@ -3,23 +3,17 @@
 }
 
 html {
-	background-image: url("background-c.webp");
-	background-size: cover;
-	background-position: center;
-	background-attachment: initial;
+	margin: 0em;
+	padding: 0em;
 	height: 100%;
-	margin: 0px;
-	padding: 0px;
 	background: #FEFEFE;
-	//background: #213448;
-	//color: rgba(44, 44, 44, 1);
 	color: rgba(13, 22, 30, 0.852);
  }
  
 body {
+	margin: 0em;
+	padding: 0em;
 	height: 100%;
-	margin: 0px;
-	padding: 0px;
 	font-family: "Poppins", sans-serif;
 	font-weight: 300;
 	font-style: normal;
@@ -29,7 +23,17 @@ body {
 }
 
 header {
+	padding: 0em;
+}
+
+.header {
 	padding: 2em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	gap: 20px;
+	align-items: baseline
 }
 
 main {
@@ -45,18 +49,13 @@ footer {
 }
 
 @media screen and (max-width: 640px) {
-	.navbar {
-		display: none;
-	}
-
-	.navbutton {
-		display: revert;
+	.header {
+		padding: 1em;
 	}
 	
-	header {
-		padding: 0em;
+	footer {
+		padding: 1em;
 	}
-
 }
 
 a {
@@ -66,7 +65,11 @@ a {
 
 a:hover {
 	color: var(--primary-color);
-	//text-decoration: underline; /* Remove underline if you prefer */
+}
+
+
+.logo a:hover {
+	color: inherit;
 }
 
 
@@ -83,15 +86,6 @@ button {
 	transition: 0.1s ease;
 }
 
-.header {
-	padding: 1em;
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	gap: 20px;
-	align-items: baseline
-}
 
 .subhead {
 	display: flex;
