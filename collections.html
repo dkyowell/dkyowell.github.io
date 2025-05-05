@@ -44,12 +44,27 @@
 			padding: 1em;
 			display: grid;
 			grid-template-columns: 33% auto;
-			cursor: pointer;
+			cursor: arrow;
+			user-select: none; 
 			font-weight: 200;
 		}
 		
+		.brand.enabled {
+			opacity: 10%;
+		}
 		.brand-name {
+			-webkit-user-select: none; /* Safari */
+			-moz-user-select: none;    /* Firefox */
+			-ms-user-select: none;     /* IE10+/Edge */
+			user-select: none; 
 			font-weight: 400;
+		}
+
+		.brand-desc {
+			-webkit-user-select: none; /* Safari */
+			-moz-user-select: none;    /* Firefox */
+			-ms-user-select: none;     /* IE10+/Edge */
+			user-select: none; 
 		}
 
 		.featured-flex {
@@ -58,12 +73,12 @@
 			gap: 1px;
 		}		
 
-		.featured-cell {
+		.overlay-cell {
 			position: relative;
 			display: block;
 		}
 
-		.featured-cell img {
+		.overlay-cell img {
 			display: block;
 			width: 100%;
 			height: auto; */
@@ -75,31 +90,38 @@
 			left: 0;
 			width: 100%;
 			height: 100%;
-			background-color: rgba(0, 0, 0, 0.6);
+			background-color: rgba(0, 0, 0, 0.65);
 			opacity: 0;
 			transition: opacity 0.3s ease;
 		}
-		
-		.overlay-text {
-			position: absolute; /* Position the text over the image */
-			top: 50%;
-			left: 50%;
-			transform: translateX(-50%) translateY(-50%);
-			text-align: center;
-			width: 100%;
-			color: white;
-			opacity: 0;
-			transition: opacity 0.3s ease;
-		}
-
 		
 		.overlay-background.enabled {
 			opacity: 100; /* Initially hide the overlay */
 		}
 		
+		/* .collection.overlay-background {
+			background-color: rgba(0, 0, 0, 0.8);
+		} */
+
+		.overlay-text {
+			position: absolute; /* Position the text over the image */
+			top: 50%;
+			left: 50%;
+			transform: translateX(200%) translateY(200%);
+			text-align: center;
+			white-space: nowrap;			
+			//width: 100%;
+			color: white;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
 		.overlay-text.enabled {
 			opacity: 100; /* Initially hide the overlay */
+			transform: translateX(-50%) translateY(-50%);
 		}
+		
+		
 
 		.overlay-text a:hover {
 			color: inherit;
@@ -124,9 +146,6 @@
 			}
 			.featured-flex {
 				grid-template-columns: repeat(1, 1fr);
-			}
-			.featured-flex {
-				flex-direction: column;
 			}
 			
 			.brand {
@@ -192,55 +211,55 @@
 	<div>
 		<div class="featured">
 			<div class="featured-flex">
-				<div class="featured-cell">
+				<div class="overlay-cell">
 					<img src="featured/watermark.webp"/>
-					<div class="overlay-background" id="overlay-watermark"></div>
-					<div class="overlay-text disabled" id="overlay-watermark-text">
+					<div class="overlay-background" id="overlay-watermark-featured"></div>
+					<div class="overlay-text" id="overlay-watermark-featured-text">
 						<a href="https://www.watermark-designs.com">
 							www.watermark-designs.com
 						</a>
 					</div>
 				</div>
-				<div class="featured-cell">
+				<div class="overlay-cell">
 					<img src="featured/armac.webp"/>
-					<div class="overlay-background" id="overlay-armac"></div>
-					<div class="overlay-text disabled" id="overlay-armac-text">
+					<div class="overlay-background" id="overlay-armac-featured"></div>
+					<div class="overlay-text" id="overlay-armac-featured-text">
 						<a href="https://www.armacmartin.com">
 							www.armacmartin.com
 						</a>
 					</div>
 				</div>
-				<div class="featured-cell">
-					<img src="featured/rocky.webp"/>
-					<div class="overlay-background" id="overlay-rocky"></div>
-					<div class="overlay-text disabled" id="overlay-rocky-text">
-						<a href="https://www.rockymountainhardware.com">
-							www.rockymountainhardware.com
-						</a>
-					</div>
-				</div>
-				<div class="featured-cell">
-					<div class="overlay-background" id="overlay-kallista"></div>
+				<div class="overlay-cell">
+					<div class="overlay-background" id="overlay-kallista-featured"></div>
 					<img src="featured/kallista.webp"/>
-					<div class="overlay-text disabled" id="overlay-kallista-text">
+					<div class="overlay-text" id="overlay-kallista-featured-text">
 						<a href="https://www.kallista.com">
 							www.kallista.com
 						</a>
 					</div>
 				</div>
-				<div class="featured-cell">
-					<div class="overlay-background" id="overlay-thg"></div>
+				<div class="overlay-cell">
+					<div class="overlay-background" id="overlay-thg-featured"></div>
 					<img src="featured/thg.webp"/>
-					<div class="overlay-text disabled" id="overlay-thg-text">
+					<div class="overlay-text" id="overlay-thg-featured-text">
 						<a href="https://www.thg-paris.com/us/en">
 							www.thg-paris.com
 						</a>
 					</div>
 				</div>
-				<div class="featured-cell">
-					<div class="overlay-background" id="overlay-calfaucets"></div>
+				<div class="overlay-cell">
+					<img src="featured/rocky.webp"/>
+					<div class="overlay-background" id="overlay-rocky-featured"></div>
+					<div class="overlay-text" id="overlay-rocky-featured-text">
+						<a href="https://www.rockymountainhardware.com">
+							www.rockymountainhardware.com
+						</a>
+					</div>
+				</div>
+				<div class="overlay-cell">
+					<div class="overlay-background" id="overlay-calfaucets-featured"></div>
 					<img src="featured/calfaucets.webp"/>
-					<div class="overlay-text disabled" id="overlay-calfaucets-text">
+					<div class="overlay-text" id="overlay-calfaucets-featured-text">
 						<a href="https://www.calfaucets.com">
 							www.calfaucets.com
 						</a>
@@ -252,125 +271,281 @@
 
 		<div class="hardware">
 			<div class="collection">
-				<div class="brand" id="armac">
-					<div class="brand-name">Armac Martin</div>
-					<div class="brand-desc" id="desc-armac">UK Made Cabinet Grilles & Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-armac"><a href="https://www.armacmartin.com">www.armacmartin.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-armac-brand">
+						<div class="brand-name">Armac Martin</div>
+						<div class="brand-desc">UK Made Cabinet Grilles & Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-armac"></div>
+					<div class="overlay-text" id="overlay-armac-text">
+						<a href="https://www.armacmartin.com">
+							www.armacmartin.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="atlas">
-					<div class="brand-name">Atlas Homewares</div>
-					<div class="brand-desc" id="desc-atlas">Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-atlas"><a href="https://www.atlashomewares.com">www.atlashomewares.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-atlas-brand">
+						<div class="brand-name">Atlas Homewares</div>
+						<div class="brand-desc">Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-atlas"></div>
+					<div class="overlay-text" id="overlay-atlas-text">
+						<a href="https://www.atlashomewares.com">
+							www.atlashomewares.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="ashley">
-					<div class="brand-name">Ashley Norton</div>
-					<div class="brand-desc" id="desc-ashley">Bronze and Brass Door and Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-ashley"><a href="https://www.ashleynorton.com">www.ashleynorton.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-ashley-brand">
+						<div class="brand-name">Ashley Norton</div>
+						<div class="brand-desc">Bronze and Brass Door and Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-ashley"></div>
+					<div class="overlay-text" id="overlay-ashley-text">
+						<a href="https://www.ashleynorton.com">
+							www.ashleynorton.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="baldwin">
-					<div class="brand-name">Baldwin</div>
-					<div class="brand-desc" id="desc-baldwin">Brass Door and Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-baldwin"><a href="https://www.baldwinhardware.com">www.baldwinhardware.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-baldwin-brand">
+						<div class="brand-name">Baldwin</div>
+						<div class="brand-desc">Brass Door and Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-baldwin"></div>
+					<div class="overlay-text" id="overlay-baldwin-text">
+						<a href="https://www.baldwinhardware.com">
+							www.baldwinhardware.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="classic">
-					<div class="brand-name">Classic Brass</div>
-					<div class="brand-desc" id="desc-classic">US Made Door and Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-classic"><a href="https://www.classic-brass.com">www.classic-brass.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-classic-brand">
+						<div class="brand-name">Classic Brass</div>
+						<div class="brand-desc">US Made Door and Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-classic"></div>
+					<div class="overlay-text" id="overlay-classic-text">
+						<a href="https://www.classic-brass.com">
+							www.classic-brass.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="colonial">
-					<div class="brand-name">Colonial Bronze</div>
-					<div class="brand-desc" id="desc-colonial">Brass Cabinet Hardware. Made in the US.</div>
-					<div class="brand-web hide" id="web-colonial"><a href="https://www.colonialbronze.com">www.colonialbronze.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-colonial-brand">
+						<div class="brand-name">Colonial Bronze</div>
+						<div class="brand-desc">Brass Cabinet Hardware. Made in the US.</div>
+					</div>
+					<div class="overlay-background" id="overlay-colonial"></div>
+					<div class="overlay-text" id="overlay-colonial-text">
+						<a href="https://www.colonialbronze.com">
+							www.colonialbronze.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="berebi">
-					<div class="brand-name">Edgar Berebi</div>
-					<div class="brand-desc" id="desc-berebi">Ornately Designed Cabinet Hardware. Made in the US.</div>
-					<div class="brand-web hide" id="web-berebi"><a href="https://aachardware.com">www.aachardware.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-berebi-brand">
+						<div class="brand-name">Edgar Berebi</div>
+						<div class="brand-desc">Ornately Designed Cabinet Hardware. Made in the US.</div>
+					</div>
+					<div class="overlay-background" id="overlay-berebi"></div>
+					<div class="overlay-text" id="overlay-berebi-text">
+						<a href="https://aachardware.com">
+							www.aachardware.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="fsb">
-					<div class="brand-name">FSB</div>
-					<div class="brand-desc" id="desc-fsb">German Made Stainless Steel Door Hardware</div>
-					<div class="brand-web hide" id="web-fsb"><a href="https://www.fsbna.com/us/">www.fsbna.com/us</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-fsb-brand">
+						<div class="brand-name">FSB</div>
+						<div class="brand-desc">German Made Stainless Steel Door Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-fsb"></div>
+					<div class="overlay-text" id="overlay-fsb-text">
+						<a href="https://www.fsbna.com/us/">
+							www.fsbna.com/us
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="kennett">
-					<div class="brand-name">Ged Kennett</div>
-					<div class="brand-desc" id="desc-kennett">UK Handmade Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-kennett"><a href="https://gedkennett.co.uk">www.gedkennett.co.uk</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-kennett-brand">
+						<div class="brand-name">Ged Kennett</div>
+						<div class="brand-desc">UK Handmade Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-kennett"></div>
+					<div class="overlay-text" id="overlay-kennett-text">
+						<a href="https://www.gedkennett.co.uk">
+							www.gedkennett.co.uk
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="hapny">
-					<div class="brand-name">Hapny</div>
-					<div class="brand-desc" id="desc-hapny">Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-hapny"><a href="https://hapnyhome.com">www.hapnyhome.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-hapny-brand">
+						<div class="brand-name">Hapny</div>
+						<div class="brand-desc">Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-hapny"></div>
+					<div class="overlay-text" id="overlay-hapny-text">
+						<a href="https://www.hapnyhome.com">
+							www.hapnyhome.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="sinkler">
-					<div class="brand-name">Hamilton Sinkler</div>
-					<div class="brand-desc" id="desc-sinkler">Brass Door and Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-sinkler"><a href="https://hamiltonsinkler.com">www.hamiltonsinkler.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-renaissance-brand">
+						<div class="brand-name">Hardware Renaissance</div>
+						<div class="brand-desc">Bronze and Iron Door and Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-renaissance"></div>
+					<div class="overlay-text" id="overlay-renaissance-text">
+						<a href="https://hardwarerenaissance.com">
+							www.hardwarerenaissance.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="renaissance">
-					<div class="brand-name">Hardware Renaissance</div>
-					<div class="brand-desc" id="desc-renaissance">Bronze and Iron Door and Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-renaissance"><a href="https://hardwarerenaissance.com">www.hardwarerenaissance.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-krown-brand">
+						<div class="brand-name">Krown Lab</div>
+						<div class="brand-desc">Sliding Barn Door Hardware. Made in the US.</div>
+					</div>
+					<div class="overlay-background" id="overlay-krown"></div>
+					<div class="overlay-text" id="overlay-krown-text">
+						<a href="https://krownlab.com">
+							www.krownlab.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="krown">
-					<div class="brand-name">Krown Lab</div>
-					<div class="brand-desc" id="desc-krown">Sliding Barn Door Hardware. Made in the US.</div>
-					<div class="brand-web hide" id="web-krown"><a href="https://krownlab.com">www.krownlab.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-nest-brand">
+						<div class="brand-name">Nest Studio</div>
+						<div class="brand-desc">Unique and Eclectic Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-nest"></div>
+					<div class="overlay-text" id="overlay-nest-text">
+						<a href="https://neststudiocollection.com">
+							www.neststudiocollection.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="nest">
-					<div class="brand-name">Nest Studio</div>
-					<div class="brand-desc" id="desc-nest">Unique and Eclectic Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-nest"><a href="https://neststudiocollection.com">www.neststudiocollection.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-rki-brand">
+						<div class="brand-name">RK International</div>
+						<div class="brand-desc">Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-rki"></div>
+					<div class="overlay-text" id="overlay-rki-text">
+						<a href="https://www.rkintl.com">
+							www.rkintl.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="rki">
-					<div class="brand-name">RK International</div>
-					<div class="brand-desc" id="desc-rki">Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-rki"><a href="https://rkintl.com">www.rkintl.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-rocky-brand">
+						<div class="brand-name">Rocky Mountain Hardware</div>
+						<div class="brand-desc">US Made Bronze Door and Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-rocky"></div>
+					<div class="overlay-text" id="overlay-rocky-text">
+						<a href="https://www.rockymountainhardware.com">
+							www.rockymountainhardware.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="rocky">
-					<div class="brand-name">Rocky Mountain Hardware</div>
-					<div class="brand-desc" id="desc-rocky">US Made Bronze Door and Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-rocky"><a href="https://www.rockymountainhardware.com">www.rockymountainhardware.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-samheath-brand">
+						<div class="brand-name">Samuel Heath</div>
+						<div class="brand-desc">Brass Door Hardware. Made in the UK.</div>
+					</div>
+					<div class="overlay-background" id="overlay-samheath"></div>
+					<div class="overlay-text" id="overlay-samheath-text">
+						<a href="https://www.samuel-heath.com/us">
+							www.samuel-heath.com/us
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="samheath">
-					<div class="brand-name">Samuel Heath</div>
-					<div class="brand-desc" id="desc-samheath">Brass Door Hardware. Made in the UK.</div>
-					<div class="brand-web hide" id="web-samheath"><a href="https://www.samuel-heath.com/us">www.samuel-heath.com/us</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-schaub-brand">
+						<div class="brand-name">Schaub</div>
+						<div class="brand-desc">Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-schaub"></div>
+					<div class="overlay-text" id="overlay-schaub-text">
+						<a href="https://www.schaubandcompany.com">
+							www.schaubandcompany.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="schaub">
-					<div class="brand-name">Schaub</div>
-					<div class="brand-desc" id="desc-schaub">Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-schaub"><a href="https://schaubandcompany.com">www.schaubandcompany.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-sietto-brand">
+						<div class="brand-name">Sietto</div>
+						<div class="brand-desc">US Made Cabinet Hardware Featuring Glass Designs</div>
+					</div>
+					<div class="overlay-background" id="overlay-sietto"></div>
+					<div class="overlay-text" id="overlay-sietto-text">
+						<a href="https://www.sietto.com">
+							www.sietto.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="sietto">
-					<div class="brand-name">Sietto</div>
-					<div class="brand-desc" id="desc-sietto">US Made Cabinet Hardware Featuring Glass Designs</div>
-					<div class="brand-web hide" id="web-sietto"><a href="https://sietto.com">www.sietto.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-tannerscraft-brand">
+						<div class="brand-name">Tanner's Craft</div>
+						<div class="brand-desc">US Made Cabinet Hardware and Door Pulls With Leather Designs</div>
+					</div>
+					<div class="overlay-background" id="overlay-tannerscraft"></div>
+					<div class="overlay-text" id="overlay-tannerscraft-text">
+						<a href="https://www.tannerscraft.com">
+							www.tannerscraft.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="tannerscraft">
-					<div class="brand-name">Tanner's Craft</div>
-					<div class="brand-desc" id="desc-tannerscraft">US Made Cabinet Hardware and Door Pulls With Leather Designs</div>
-					<div class="brand-web hide" id="web-tannerscraft"><a href="https://tannerscraft.com">www.tannerscraft.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-topknobs-brand">
+						<div class="brand-name">Top Knobs</div>
+						<div class="brand-desc">Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-topknobs"></div>
+					<div class="overlay-text" id="overlay-topknobs-text">
+						<a href="https://www.topknobs.com">
+							www.topknobs.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="topknobs">
-					<div class="brand-name">Top Knobs</div>
-					<div class="brand-desc" id="desc-topknobs">Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-topknobs"><a href="https://www.topknobs.com">www.topknobs.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-turnstyle-brand">
+						<div class="brand-name">Turnstyle Designs</div>
+						<div class="brand-desc">UK Made Door and Cabinet Hardware With Leather Designs</div>
+					</div>
+					<div class="overlay-background" id="overlay-turnstyle"></div>
+					<div class="overlay-text" id="overlay-turnstyle-text">
+						<a href="https://www.turnstyledesigns.com">
+							www.turnstyledesigns.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="turnstyle">
-					<div class="brand-name">Turnstyle Designs</div>
-					<div class="brand-desc" id="desc-turnstyle">UK Made Door and Cabinet Hardware With Leather Designs</div>
-					<div class="brand-web hide" id="web-turnstyle"><a href="https://www.turnstyledesigns.com">www.turnstyledesigns.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-vesta-brand">
+						<div class="brand-name">Vesta</div>
+						<div class="brand-desc">Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-vesta"></div>
+					<div class="overlay-text" id="overlay-vesta-text">
+						<a href="https://www.vestafinehardware.com">
+							www.vestafinehardware.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="vesta">
-					<div class="brand-name">Vesta</div>
-					<div class="brand-desc" id="desc-vesta">Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-vesta"><a href="https://www.vestafinehardware.com">www.vestafinehardware.com</a></div>
-				</div>
-				<div class="brand" id="waterstreet">
-					<div class="brand-name">Water Street Brass</div>
-					<div class="brand-desc" id="desc-waterstreet">US Made Brass Door and Cabinet Hardware</div>
-					<div class="brand-web hide" id="web-waterstreet"><a href="https://www.waterstreetbrass.com">www.waterstreetbrass.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-waterstreet-brand">
+						<div class="brand-name">Water Street Brass</div>
+						<div class="brand-desc">US Made Brass Door and Cabinet Hardware</div>
+					</div>
+					<div class="overlay-background" id="overlay-waterstreet"></div>
+					<div class="overlay-text" id="overlay-waterstreet-text">
+						<a href="https://www.waterstreetbrass.com">
+							www.waterstreetbrass.com
+						</a>
+					</div>				
 				</div>
 			</div>		
 		</div>
@@ -609,47 +784,53 @@
 			setCategory(category);
 		}
 		
-		const array = document.querySelectorAll('.brand');
-		for (let i = 0; i < array.length; i++) {
-			array[i].addEventListener('click', function() {
-				const web = document.querySelectorAll('.brand-web');
-				for (let j = 0; j < web.length; j++) {
-					if (web[j].id != `web-${this.id}`) {
-						web[j].classList.add('hide');
-					} else {
-						console.log("skip");
-					}
-				}
-				const desc = document.querySelectorAll('.brand-desc');
-				for (let k = 0; k < desc.length; k++) {
-					if (desc[k].id != `desc-${this.id}`) {
-						desc[k].classList.remove('hide');
-					}
-				}
-				const descElement = document.querySelector(`#desc-${this.id}`);
-				descElement.classList.toggle('hide');
-				const webElement = document.querySelector(`#web-${this.id}`);
-				webElement.classList.toggle('hide');
-			});
-		};
+		// const array = document.querySelectorAll('.brand');
+		// for (let i = 0; i < array.length; i++) {
+		// 	array[i].addEventListener('click', function() {
+		// 		const web = document.querySelectorAll('.brand-web');
+		// 		for (let j = 0; j < web.length; j++) {
+		// 			if (web[j].id != `web-${this.id}`) {
+		// 				web[j].classList.add('hide');
+		// 			} else {
+		// 				console.log("skip");
+		// 			}
+		// 		}
+		// 		const desc = document.querySelectorAll('.brand-desc');
+		// 		for (let k = 0; k < desc.length; k++) {
+		// 			if (desc[k].id != `desc-${this.id}`) {
+		// 				desc[k].classList.remove('hide');
+		// 			}
+		// 		}
+		// 		const descElement = document.querySelector(`#desc-${this.id}`);
+		// 		descElement.classList.toggle('hide');
+		// 		const webElement = document.querySelector(`#web-${this.id}`);
+		// 		webElement.classList.toggle('hide');
+		// 	});
+		// };
 		
 		const overlayArray = document.querySelectorAll('.overlay-background');
 		overlayArray.forEach(function(element) {
-			console.log("The current number is:", element.id);			
 			element.addEventListener('click', function() {				
 				const overlayArray = document.querySelectorAll('.overlay-background');
 				const clicked = this;
 				overlayArray.forEach(function(element) {
 					if (element.id != clicked.id) {
 						element.classList.remove('enabled');
-						const text = document.querySelector(`#${element.id}-text`);
-						text.classList.remove('enabled');
+						const text = document.getElementById(`${element.id}-text`);
+						if (text != null) {
+							text.classList.remove('enabled');
+						}
+						const brand = document.getElementById(`${element.id}-brand`);
+						if (brand != null) {
+							brand.classList.remove('enabled');
+						}
 					}
 				});				
-				console.log("The current number is:", this.id);
 				this.classList.toggle('enabled');
 				const text = document.querySelector(`#${this.id}-text`);
 				text.classList.toggle('enabled');
+				const brand = document.getElementById(`${this.id}-brand`);
+				brand.classList.toggle('enabled');
 			});
 		});
 
