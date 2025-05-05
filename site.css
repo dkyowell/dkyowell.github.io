@@ -180,6 +180,23 @@ button {
 	gap: 20px;
 }
 
+.bottombar {
+	display: none;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	font-size: 11pt;
+}
+
+.infobar {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+	justify-content: space-between;
+	font-size: 11pt;
+}
+
+
 .baseline {
 	align-items: baseline
 }
@@ -222,5 +239,12 @@ button {
 		display: revert;
 	}
 	
+	.infobar {
+		display: none;
+	}
+	
+	.bottombar {
+		display: flex;
+	}
 
 }

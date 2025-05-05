@@ -107,10 +107,9 @@
 			position: absolute; /* Position the text over the image */
 			top: 50%;
 			left: 50%;
-			transform: translateX(200%) translateY(200%);
+			transform: translateX(-50%) translateY(-50%) scale(0);
 			text-align: center;
 			white-space: nowrap;			
-			//width: 100%;
 			color: white;
 			opacity: 0;
 			transition: opacity 0.3s ease;
@@ -118,7 +117,7 @@
 
 		.overlay-text.enabled {
 			opacity: 100; /* Initially hide the overlay */
-			transform: translateX(-50%) translateY(-50%);
+			transform: translateX(-50%) translateY(-50%) scale(1);
 		}
 		
 		
@@ -363,7 +362,7 @@
 					<div class="overlay-background" id="overlay-fsb"></div>
 					<div class="overlay-text" id="overlay-fsb-text">
 						<a href="https://www.fsbna.com/us/">
-							www.fsbna.com/us
+							www.fsbna.com
 						</a>
 					</div>				
 				</div>
@@ -459,7 +458,7 @@
 					<div class="overlay-background" id="overlay-samheath"></div>
 					<div class="overlay-text" id="overlay-samheath-text">
 						<a href="https://www.samuel-heath.com/us">
-							www.samuel-heath.com/us
+							www.samuel-heath.com
 						</a>
 					</div>				
 				</div>
@@ -551,175 +550,413 @@
 		</div>
 		<div class="plumbing">
 			<div class="collection">
-				<div class="brand" id="axor">
-					<div class="brand-name">Axor</div>
-					<div class="brand-desc" id="desc-axor">German Made Bath and Kitchen Fixtures</div>
-					<div class="brand-web hide" id="web-axor"><a href="https://www.axor-design.com/us">www.axor-design.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-axor-brand">
+						<div class="brand-name">Axor</div>
+						<div class="brand-desc">German Made Bath and Kitchen Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-axor"></div>
+					<div class="overlay-text" id="overlay-axor-text">
+						<a href="https://www.axor-design.com/us">
+							www.axor-design.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="bates">
-					<div class="brand-name">Bates Sinks</div>
-					<div class="brand-desc" id="desc-bates">Metal Sinks for Bar and Bath</div>
-					<div class="brand-web hide" id="web-bates"><a href="https://alnoinc.com/bates-and-bates-products/">www.alnoinc.com/bates-and-bates-products</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-bates-brand">
+						<div class="brand-name">Bates Sinks</div>
+						<div class="brand-desc">Metal Sinks for Bar and Bath</div>
+					</div>
+					<div class="overlay-background" id="overlay-bates"></div>
+					<div class="overlay-text" id="overlay-bates-text">
+						<a href="https://alnoinc.com/bates-and-bates-products">
+							www.alnoinc.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="bain">
-					<div class="brand-name">Bain Ultra</div>
-					<div class="brand-desc" id="desc-bain">Leaders in Therapeutic Bathing. Made in Canada.</div>
-					<div class="brand-web hide" id="web-bain"><a href="https://bainultra.com">www.bainultra.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-bain-brand">
+						<div class="brand-name">Bain Ultra</div>
+						<div class="brand-desc">Leaders in Therapeutic Bathing. Made in Canada</div>
+					</div>
+					<div class="overlay-background" id="overlay-bain"></div>
+					<div class="overlay-text" id="overlay-bain-text">
+						<a href="https://bainultra.com">
+							www.bainultra.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="blanco">
-					<div class="brand-name">Blanco</div>
-					<div class="brand-desc" id="desc-blanco">German Manufacturer of Stainless and Silgranit Sinks</div>
-					<div class="brand-web hide" id="web-blanco"><a href="https://www.blanco.com/us-en/">www.blanco.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-blanco-brand">
+						<div class="brand-name">Blanco</div>
+						<div class="brand-desc">German Manufacturer of Stainless and Silgranit Sinks</div>
+					</div>
+					<div class="overlay-background" id="overlay-blanco"></div>
+					<div class="overlay-text" id="overlay-blanco-text">
+						<a href="https://blanco.com/us-en/">
+							www.blanco.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="calfaucets">
-					<div class="brand-name">California Faucets</div>
-					<div class="brand-desc" id="desc-calfaucets">US Made Bath and Kitchen Fixtures</div>
-					<div class="brand-web hide" id="web-calfaucets"><a href="https://www.calfaucets.com">www.calfaucets.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-calfaucets-brand">
+						<div class="brand-name">California Faucets</div>
+						<div class="brand-desc">US Made Bath and Kitchen Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-calfaucets"></div>
+					<div class="overlay-text" id="overlay-calfaucets-text">
+						<a href="https://calfaucets.com">
+							www.calfaucets.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="cheviot">
-					<div class="brand-name">Cheviot</div>
-					<div class="brand-desc" id="desc-cheviot">European Made Cast Iron Tubs</div>
-					<div class="brand-web hide" id="web-cheviot"><a href="https://cheviotproducts.com">www.cheviotproducts.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-cheviot-brand">
+						<div class="brand-name">Cheviot</div>
+						<div class="brand-desc">European Made Cast Iron Tubs</div>
+					</div>
+					<div class="overlay-background" id="overlay-cheviot"></div>
+					<div class="overlay-text" id="overlay-cheviot-text">
+						<a href="https://cheviotproducts.com">
+							www.cheviotproducts.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="dornbracht">
-					<div class="brand-name">Dornbracht</div>
-					<div class="brand-desc" id="desc-dornbracht">German Made Bath and Kitchen Fixtures</div>
-					<div class="brand-web hide" id="web-dornbracht"><a href="https://www.dornbracht.com/en/">www.dornbracht.com/en</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-dornbracht-brand">
+						<div class="brand-name">Dornbracht</div>
+						<div class="brand-desc">German Made Bath and Kitchen Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-dornbracht"></div>
+					<div class="overlay-text" id="overlay-dornbracht-text">
+						<a href="https://www.dornbracht.com/en">
+							www.dornbracht.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="franke">
-					<div class="brand-name">Franke</div>
-					<div class="brand-desc" id="desc-franke">Swiss brand for Kitchen Sinks and Fixtures</div>
-					<div class="brand-web hide" id="web-franke"><a href="https://www.franke.com/us/en/home-solutions.html">www.franke.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-franke-brand">
+						<div class="brand-name">Franke</div>
+						<div class="brand-desc">Swiss brand for Kitchen Sinks and Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-franke"></div>
+					<div class="overlay-text" id="overlay-franke-text">
+						<a href="https://www.franke.com/us/en/home-solutions.html">
+							www.franke.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="viegener">
-					<div class="brand-name">Franz Viegener</div>
-					<div class="brand-desc" id="desc-viegener">Distinctive Bath and Kitchen Fixtures. Made in Argentina.</div>
-					<div class="brand-web hide" id="web-viegener"><a href="https://www.franzviegener.com">www.franzviegener.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-viegener-brand">
+						<div class="brand-name">Franz Viegener</div>
+						<div class="brand-desc">Distinctive Bath and Kitchen Fixtures. Made in Argentina.</div>
+					</div>
+					<div class="overlay-background" id="overlay-viegener"></div>
+					<div class="overlay-text" id="overlay-viegener-text">
+						<a href="https://www.franzviegener.com">
+							www.franzviegener.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="ginger">
-					<div class="brand-name">Ginger</div>
-					<div class="brand-desc" id="desc-ginger">Bath Accessories</div>
-					<div class="brand-web hide" id="web-ginger"><a href="https://www.gingerco.com">www.gingerco.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-ginger-brand">
+						<div class="brand-name">Ginger</div>
+						<div class="brand-desc">Bath Accessories</div>
+					</div>
+					<div class="overlay-background" id="overlay-ginger"></div>
+					<div class="overlay-text" id="overlay-ginger-text">
+						<a href="https://gingerco.com">
+							www.gingerco.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="hansgrohe">
-					<div class="brand-name">Hansgrohe</div>
-					<div class="brand-desc" id="desc-hansgrohe">Bath and Kitchen Fixtures</div>
-					<div class="brand-web hide" id="web-hansgrohe"><a href="https://www.hansgrohe-usa.com">www.hansgrohe-usa.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-hansgrohe-brand">
+						<div class="brand-name">Hansgrohe</div>
+						<div class="brand-desc">Bath and Kitchen Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-hansgrohe"></div>
+					<div class="overlay-text" id="overlay-hansgrohe-text">
+						<a href="https://www.hansgrohe-usa.com">
+							www.hansgrohe-usa.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="horus">
-					<div class="brand-name">Horus</div>
-					<div class="brand-desc" id="desc-horus">Luxury Bath and Kitchen Fixtures. Made in France.</div>
-					<div class="brand-web hide" id="web-horus"><a href="https://www.horusfrance.com/en/">www.horusfrance.com/en/</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-horus-brand">
+						<div class="brand-name">Horus</div>
+						<div class="brand-desc">Luxury Bath and Kitchen Fixtures. Made in France.</div>
+					</div>
+					<div class="overlay-background" id="overlay-horus"></div>
+					<div class="overlay-text" id="overlay-horus-text">
+						<a href="https://www.horusfrance.com/en">
+							www.horusfrance.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="hydro">
-					<div class="brand-name">Hydro Systems</div>
-					<div class="brand-desc" id="desc-hydro">US Made Freestanding and Drop-in Bathtubs</div>
-					<div class="brand-web hide" id="web-hydro"><a href="https://hydrosystem.com">www.hydrosystem.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-hydro-brand">
+						<div class="brand-name">Hydro Systems</div>
+						<div class="brand-desc">US Made Freestanding and Drop-in Bathtubs</div>
+					</div>
+					<div class="overlay-background" id="overlay-hydro"></div>
+					<div class="overlay-text" id="overlay-hydro-text">
+						<a href="https://hydrosystem.com">
+							www.hydrosystem.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="julien">
-					<div class="brand-name">Julien</div>
-					<div class="brand-desc" id="desc-julien">Canadian Made Custom Stainless Kitchen Sinks</div>
-					<div class="brand-web hide" id="web-julien"><a href="https://www.homerefinements.ca/en_us/">www.julien.ca</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-julien-brand">
+						<div class="brand-name">Julien</div>
+						<div class="brand-desc">Canadian Made Custom Stainless Kitchen Sinks</div>
+					</div>
+					<div class="overlay-background" id="overlay-julien"></div>
+					<div class="overlay-text" id="overlay-julien-text">
+						<a href="https://www.homerefinements.ca/en_us">
+							www.julien.ca
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="jandelle">
-					<div class="brand-name">Jandelle Paris</div>
-					<div class="brand-desc" id="desc-jandelle">Metal Sinks for Bath & Bar. Made in France.</div>
-					<div class="brand-web hide" id="web-jandelle"><a href="https://www.jandelle.com/en">www.jandelle.com/en</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-jandelle-brand">
+						<div class="brand-name">Jandelle Paris</div>
+						<div class="brand-desc">Metal Sinks for Bath & Bar. Made in France.</div>
+					</div>
+					<div class="overlay-background" id="overlay-jandelle"></div>
+					<div class="overlay-text" id="overlay-jandelle-text">
+						<a href="https://www.jandelle.com/en">
+							www.jandelle.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="kallista">
-					<div class="brand-name">Kallista</div>
-					<div class="brand-desc" id="desc-kallista">European Made Bath and Kitchen Fixtures, Sinks, & Tubs</div>
-					<div class="brand-web hide" id="web-kallista"><a href="https://www.kallista.com">www.kallista.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-kallista-brand">
+						<div class="brand-name">Kallista</div>
+						<div class="brand-desc">European Made Bath and Kitchen Fixtures, Sinks, & Tubs</div>
+					</div>
+					<div class="overlay-background" id="overlay-kallista"></div>
+					<div class="overlay-text" id="overlay-kallista-text">
+						<a href="https://www.kallista.com">
+							www.kallista.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="kartners">
-					<div class="brand-name">Kartners</div>
-					<div class="brand-desc" id="desc-kartners">Bath Accessories & Towel Warmers</div>
-					<div class="brand-web hide" id="web-kartners"><a href="https://www.kartners.com">www.kartners.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-kartners-brand">
+						<div class="brand-name">Kartners</div>
+						<div class="brand-desc">Bath Accessories & Towel Warmers</div>
+					</div>
+					<div class="overlay-background" id="overlay-kartners"></div>
+					<div class="overlay-text" id="overlay-kartners-text">
+						<a href="https://www.kartners.com">
+							www.kartners.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="kast">
-					<div class="brand-name">Kast</div>
-					<div class="brand-desc" id="desc-kast">UK Maker of Concrete Sinks in Stylish Colors</div>
-					<div class="brand-web hide" id="web-kast"><a href="https://kastconcretebasins.com">www.kastconcretebasins.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-kast-brand">
+						<div class="brand-name">Kast</div>
+						<div class="brand-desc">UK Maker of Concrete Sinks in Stylish Colors</div>
+					</div>
+					<div class="overlay-background" id="overlay-kast"></div>
+					<div class="overlay-text" id="overlay-kast-text">
+						<a href="https://kastconcretebasins.com">
+							www.kastconcretebasins.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="linkasink">
-					<div class="brand-name">Link-A-Sink</div>
-					<div class="brand-desc" id="desc-linkasink">Eclectic Collection of Sinks for Bath, Kitchen, & Bar</div>
-					<div class="brand-web hide" id="web-linkasink"><a href="https://www.linkasink.com">www.linkasink.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-linkasink-brand">
+						<div class="brand-name">Link-A-Sink</div>
+						<div class="brand-desc">Eclectic Collection of Sinks for Bath, Kitchen, & Bar</div>
+					</div>
+					<div class="overlay-background" id="overlay-linkasink"></div>
+					<div class="overlay-text" id="overlay-linkasink-text">
+						<a href="https://www.linkasink.com">
+							www.linkasink.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="marzi">
-					<div class="brand-name">Marzi</div>
-					<div class="brand-desc" id="desc-marzi">Handcrafted Sinks for the Bath. Made in the US.</div>
-					<div class="brand-web hide" id="web-marzi"><a href="https://marzisinks.com">www.marzisinks.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-marzi-brand">
+						<div class="brand-name">Marzi</div>
+						<div class="brand-desc">Handcrafted Sinks for the Bath. Made in the US.</div>
+					</div>
+					<div class="overlay-background" id="overlay-marzi"></div>
+					<div class="overlay-text" id="overlay-marzi-text">
+						<a href="https://marzisinks.com">
+							www.marzisinks.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="milla">
-					<div class="brand-name">Mila</div>
-					<div class="brand-desc" id="desc-milla">US Made Kitchen Sinks and Accessories</div>
-					<div class="brand-web hide" id="web-milla"><a href="https://mila-international.com">www.mila-international.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-mila-brand">
+						<div class="brand-name">Mila</div>
+						<div class="brand-desc">US Made Kitchen Sinks and Accessories</div>
+					</div>
+					<div class="overlay-background" id="overlay-mila"></div>
+					<div class="overlay-text" id="overlay-mila-text">
+						<a href="https://mila-international.com">
+							www.mila-international.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="mrsteam">
-					<div class="brand-name">Mr. Steam</div>
-					<div class="brand-desc" id="desc-mrsteam">Steam Showers Made in the US</div>
-					<div class="brand-web hide" id="web-mrsteam"><a href="https://www.mrsteam.com">www.mrsteam.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-mrsteam-brand">
+						<div class="brand-name">Mr. Steam</div>
+						<div class="brand-desc">Steam Showers Made in the US</div>
+					</div>
+					<div class="overlay-background" id="overlay-mrsteam"></div>
+					<div class="overlay-text" id="overlay-mrsteam-text">
+						<a href="https://www.mrsteam.com">
+							www.mrsteam.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="newport">
-					<div class="brand-name">Newport Brass</div>
-					<div class="brand-desc" id="desc-newport">US Manufacturer of Bath and Kitchen Fixtures</div>
-					<div class="brand-web hide" id="web-newport"><a href="https://www.newportbrass.com">www.newportbrass.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-newport-brand">
+						<div class="brand-name">Newport Brass</div>
+						<div class="brand-desc">US Manufacturer of Bath and Kitchen Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-newport"></div>
+					<div class="overlay-text" id="overlay-newport-text">
+						<a href="https://www.newportbrass.com">
+							www.newportbrass.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="perrinrowe">
-					<div class="brand-name">Perrin & Rowe</div>
-					<div class="brand-desc" id="desc-perrinrowe">UK Made Bath and Kitchen Fixtures</div>
-					<div class="brand-web hide" id="web-perrinrowe"><a href="https://houseofrohl.com/perrin-and-rowe/">www.houseofrohl.com/perrin-and-rowe</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-perrinrowe-brand">
+						<div class="brand-name">Perrin & Rowe</div>
+						<div class="brand-desc">UK Made Bath and Kitchen Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-perrinrowe"></div>
+					<div class="overlay-text" id="overlay-perrinrowe-text">
+						<a href="https://houseofrohl.com/perrin-and-rowe">
+							www.houseofrohl.com/perrin-and-rowe
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="phylrich">
-					<div class="brand-name">Phylrich</div>
-					<div class="brand-desc" id="desc-phylrich">US Made Bath Fixtures</div>
-					<div class="brand-web hide" id="web-phylrich"><a href="https://phylrich.com">www.phylrich.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-phylrich-brand">
+						<div class="brand-name">Phylrich</div>
+						<div class="brand-desc">US Made Bath Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-phylrich"></div>
+					<div class="overlay-text" id="overlay-phylrich-text">
+						<a href="https://phylrich.com">
+							www.phylrich.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="rohl">
-					<div class="brand-name">Rohl</div>
-					<div class="brand-desc" id="desc-rohl">Bath and Kitchen Fixtures from Italy and Others</div>
-					<div class="brand-web hide" id="web-rohl"><a href="https://houseofrohl.com/rohl/">www.houseofrohl.com/rohl</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-rohl-brand">
+						<div class="brand-name">Rohl</div>
+						<div class="brand-desc">Bath and Kitchen Fixtures from Italy and Others</div>
+					</div>
+					<div class="overlay-background" id="overlay-rohl"></div>
+					<div class="overlay-text" id="overlay-rohl-text">
+						<a href="https://www.houseofrohl.com/rohl">
+							www.houseofrohl.com/rohl
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="samheathplumbing">
-					<div class="brand-name">Samuel Heath</div>
-					<div class="brand-desc" id="desc-samheathplumbing">UK Made Bath and Kitchen Fixtures</div>
-					<div class="brand-web hide" id="web-samheathplumbing"><a href="https://www.samuel-heath.com/us">www.samuel-heath.com/us</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-samheathplumbing-brand">
+						<div class="brand-name">Samuel Heath</div>
+						<div class="brand-desc">UK Made Bath and Kitchen Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-samheathplumbing"></div>
+					<div class="overlay-text" id="overlay-samheathplumbing-text">
+						<a href="https://www.samuel-heath.com/us">
+							www.samuel-heath.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="shaws">
-					<div class="brand-name">Shaws</div>
-					<div class="brand-desc" id="desc-shaws">UK Made Fireclay Sinks for Kitchen & Bar</div>
-					<div class="brand-web hide" id="web-shaws"><a href="https://houseofrohl.com/shaws/">www.houseofrohl.com/shaws</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-shaws-brand">
+						<div class="brand-name">Shaws</div>
+						<div class="brand-desc">UK Made Fireclay Sinks for Kitchen & Bar</div>
+					</div>
+					<div class="overlay-background" id="overlay-shaws"></div>
+					<div class="overlay-text" id="overlay-shaws-text">
+						<a href="https://www.houseofrohl.com/shaws">
+							www.houseofrohl.com/shaws
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="stoneforest">
-					<div class="brand-name">Stone Forest</div>
-					<div class="brand-desc" id="desc-stoneforest">Sinks, Stone Tubs, and Bath Furniture</div>
-					<div class="brand-web hide" id="web-stoneforest"><a href="https://stoneforest.com">www.stoneforest.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-stoneforest-brand">
+						<div class="brand-name">Stone Forest</div>
+						<div class="brand-desc">Sinks, Stone Tubs, & Bath Furniture</div>
+					</div>
+					<div class="overlay-background" id="overlay-stoneforest"></div>
+					<div class="overlay-text" id="overlay-stoneforest-text">
+						<a href="https://stoneforest.com">
+							www.stoneforest.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="thg">
-					<div class="brand-name">THG Paris</div>
-					<div class="brand-desc" id="desc-thg">Luxury Bath and Kitchen Fixtures. Made in France.</div>
-					<div class="brand-web hide" id="web-thg"><a href="https://www.thg-paris.com/us/en">www.thg-paris.com/us/en</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-thg-brand">
+						<div class="brand-name">THG Paris</div>
+						<div class="brand-desc">Luxury Bath and Kitchen Fixtures. Made in France.</div>
+					</div>
+					<div class="overlay-background" id="overlay-thg"></div>
+					<div class="overlay-text" id="overlay-thg-text">
+						<a href="https://www.thg-paris.com/us/en">
+							www.thg-paris.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="toto">
-					<div class="brand-name">Toto</div>
-					<div class="brand-desc" id="desc-toto">Japanese Brand for High-Performance Toilets & Washlets</div>
-					<div class="brand-web hide" id="web-toto"><a href="https://www.totousa.com">www.totousa.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-toto-brand">
+						<div class="brand-name">Toto</div>
+						<div class="brand-desc">Japanese Brand of High-Performance Toilets & Washlets</div>
+					</div>
+					<div class="overlay-background" id="overlay-toto"></div>
+					<div class="overlay-text" id="overlay-toto-text">
+						<a href="https://www.totousa.com">
+							www.totousa.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="victoriaalbert">
-					<div class="brand-name">Victoria + Albert</div>
-					<div class="brand-desc" id="desc-victoriaalbert">Volcanic Limestone Freestanding Tubs</div>
-					<div class="brand-web hide" id="web-victoriaalbert"><a href="https://houseofrohl.com/victoria-and-albert/">www.houseofrohl.com/victoria-and-albert</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-victoriaalbert-brand">
+						<div class="brand-name">Victoria + Albert</div>
+						<div class="brand-desc">Volcanic Limestone Freestanding Tubs</div>
+					</div>
+					<div class="overlay-background" id="overlay-victoriaalbert"></div>
+					<div class="overlay-text" id="overlay-victoriaalbert-text">
+						<a href="https://houseofrohl.com/victoria-and-albert">
+							www.houseofrohl.com/victoria-and-albert
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="waterstone">
-					<div class="brand-name">Waterstone</div>
-					<div class="brand-desc" id="desc-waterstone">US Made Kitchen Faucets</div>
-					<div class="brand-web hide" id="web-waterstone"><a href="https://waterstoneco.com">www.waterstoneco.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-waterstone-brand">
+						<div class="brand-name">Waterstone</div>
+						<div class="brand-desc">US Made Kitchen Faucets</div>
+					</div>
+					<div class="overlay-background" id="overlay-waterstone"></div>
+					<div class="overlay-text" id="overlay-waterstone-text">
+						<a href="https://waterstoneco.com">
+							www.waterstoneco.com
+						</a>
+					</div>				
 				</div>
-				<div class="brand" id="watermark">
-					<div class="brand-name">Watermark Designs</div>
-					<div class="brand-desc" id="desc-watermark">US Made Bath and Kitchen Fixtures</div>
-					<div class="brand-web hide" id="web-watermark"><a href="https://watermark-designs.com">www.watermark-designs.com</a></div>
+				<div class="overlay-cell">
+					<div class="brand" id="overlay-watermark-brand">
+						<div class="brand-name">Watermark Designs</div>
+						<div class="brand-desc">US Made Bath and Kitchen Fixtures</div>
+					</div>
+					<div class="overlay-background" id="overlay-watermark"></div>
+					<div class="overlay-text" id="overlay-watermark-text">
+						<a href="https://watermark-designs.com">
+							www.watermark-designs.com
+						</a>
+					</div>				
 				</div>
 			</div>
 		</div>
@@ -783,30 +1020,6 @@
 		} else {
 			setCategory(category);
 		}
-		
-		// const array = document.querySelectorAll('.brand');
-		// for (let i = 0; i < array.length; i++) {
-		// 	array[i].addEventListener('click', function() {
-		// 		const web = document.querySelectorAll('.brand-web');
-		// 		for (let j = 0; j < web.length; j++) {
-		// 			if (web[j].id != `web-${this.id}`) {
-		// 				web[j].classList.add('hide');
-		// 			} else {
-		// 				console.log("skip");
-		// 			}
-		// 		}
-		// 		const desc = document.querySelectorAll('.brand-desc');
-		// 		for (let k = 0; k < desc.length; k++) {
-		// 			if (desc[k].id != `desc-${this.id}`) {
-		// 				desc[k].classList.remove('hide');
-		// 			}
-		// 		}
-		// 		const descElement = document.querySelector(`#desc-${this.id}`);
-		// 		descElement.classList.toggle('hide');
-		// 		const webElement = document.querySelector(`#web-${this.id}`);
-		// 		webElement.classList.toggle('hide');
-		// 	});
-		// };
 		
 		const overlayArray = document.querySelectorAll('.overlay-background');
 		overlayArray.forEach(function(element) {
