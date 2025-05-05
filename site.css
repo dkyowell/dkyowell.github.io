@@ -124,6 +124,11 @@ button {
 	transform: rotate(-45deg) translateY(-6px) scaleX(1.25);
 }
 
+.menu-icon-active#bottombar {
+	opacity: 0%;
+}
+
+
 #popdown {
 	height: 0px;
     visibility: hidden;
@@ -180,12 +185,13 @@ button {
 	gap: 20px;
 }
 
-.bottombar {
+#bottombar {
 	display: none;
 	flex-direction: row;
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	font-size: 11pt;
+	transition: opacity 0.3s ease; /* Smooth transition */
 }
 
 .infobar {
@@ -243,7 +249,7 @@ button {
 		display: none;
 	}
 	
-	.bottombar {
+	#bottombar {
 		display: flex;
 	}
 
