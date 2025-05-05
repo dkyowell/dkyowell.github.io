@@ -13,8 +13,7 @@
 			padding: 1em;
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			font-weight: 600;
-			gap: 10px;
+			/* gap: 10px; */
 		}
 
 		.categories button {
@@ -41,41 +40,16 @@
 			background-color: #ffffff; /* White background for even rows */
 		}
 		
-
-		
 		.brand {
 			padding: 1em;
 			display: grid;
 			grid-template-columns: 33% auto;
 			cursor: pointer;
+			font-weight: 200;
 		}
-		
 		
 		.brand-name {
-			cursor: pointer;
 			font-weight: 400;
-		}
-		
-		.brand-desc {
-			font-weight: 200;
-			transition: opacity 0.3s ease;
-		}
-		
-		.brand-web {
-			font-weight: 200;
-			transition: opacity 0.3s ease;
-//			color: var(--primary-color);
-			/* font-weight: 400; */
-		}
-		
-		/* .brand-name:hover {
-			color: var(--primary-color);
-		} */
-		
-		
-		.featured { /* For filtering by category */
-			//height: 240px;
-		    //border-radius: 10px; /* Adjust the radius value as needed */ */
 		}
 
 		.featured-flex {
@@ -166,7 +140,7 @@
 <body>
 	<header>
 	<div id="header">
-	<div class="flexrow baseline">
+	<div class="header">
 		<div class="logo">
 			<a href="index.html" style="text-decoration: none">Hollywood Hardware</a>
 		</div>
@@ -187,9 +161,7 @@
 	</div>
 		<div id="popdown">
 			<div class="navitem"><a href="showroom.html">Showroom</a></div>
-			<div style="opacity: 50%">・</div>
 			<div class="navitem"><a href="collections.html">Collections</a></div>
-			<div style="opacity: 50%">・</div>
 			<div class="navitem"><a href="about.html">Our Story</a></div>
 		</div>
 	</div>
