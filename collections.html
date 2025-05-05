@@ -9,14 +9,10 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 	<style>
-		.hide {
-			display: none;
-		}
-		
 		.categories {
+			padding: 1em;
 			display: grid;
 			grid-template-columns: repeat(3, 1fr);
-			padding-bottom: 20px;
 			font-weight: 600;
 			gap: 10px;
 		}
@@ -47,32 +43,40 @@
 		
 		/* Style for the odd rows */
 		.collection > *:nth-child(odd) {
-			padding: 10px;
 			background-color: #f6f6f6; /* Light gray background for odd rows */
 		}
 		
 		/* Style for the even rows */
 		.collection > *:nth-child(even) {
-			padding: 10px;
 			background-color: #ffffff; /* White background for even rows */
 		}
 		
-		/* Optional: Add some padding to the grid items */
-		.grid-container > * {
-		  padding: 10px;
-		}
-
 		.brand {
+			padding: 1em;
 			display: grid;
-			//row-gap: 12px;
-  		  	grid-template-columns: 33% 67%; /* Defines two columns with specified widths
-			width: 100%; */
+			grid-template-columns: 33% 67%;
+		}
+		
+		.brand-name {
+			cursor: pointer;
 			font-weight: 400;
+		}
+		
+		.brand-desc {
+			font-weight: 200;
+		}
+		
+		.brand-web {
+//			color: var(--primary-color);
+			font-weight: 400;
+		}
+		
+		.brand-name:hover {
+			color: var(--primary-color);
 		}
 		
 		.brand > *:nth-child(2) {
 			//font-size: 10pt;
-			font-weight: 200;
 		}
 		
 		.featured { /* For filtering by category */
@@ -86,13 +90,63 @@
 			gap: 1px;
 		}		
 
+		.featured-cell {
+			position: relative;
+			display: block;
+		}
+
 		.featured-cell img {
 			display: block;
 			width: 100%;
-			//object-fit: cover;
 			height: auto; */
-			/* width: 100%; /* Make images responsive */
 		}
+		
+		.overlay-background {
+			position: absolute; /* Position the text over the image */
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.6);
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+		
+		.overlay-text {
+			position: absolute; /* Position the text over the image */
+			top: 50%;
+			left: 50%;
+			transform: translateX(-50%) translateY(-50%);
+			text-align: center;
+			width: 100%;
+			color: white;
+			opacity: 0;
+			transition: opacity 0.3s ease;
+		}
+
+		
+		.overlay-background.enabled {
+			opacity: 100; /* Initially hide the overlay */
+		}
+		
+		.overlay-text.enabled {
+			opacity: 100; /* Initially hide the overlay */
+		}
+
+		.overlay-text a:hover {
+			color: inherit;
+		}
+
+		.overlay-text a {
+			pointer-events: none;
+			cursor: default;
+		}
+		
+		.overlay-text.enabled a {
+			pointer-events: revert;
+			cursor: revert;
+		}
+
 		
 
 		@media screen and (max-width: 640px) {
@@ -142,6 +196,9 @@
 	</div>
 	</header>
 	<main>
+	<div class="subhead">
+		Showroom Collections
+	</div>
 	<div class="categories">
 		<div>
 			<button id="featured-button" class="selected-category">
@@ -161,355 +218,472 @@
 	</div>
 		
 
-	<div style="display: flex; flex-direction: column; gap: 20px">
-		<div class="featured show">
+	<div>
+		<div class="featured">
 			<div class="featured-flex">
 				<div class="featured-cell">
-					<a href="https://www.watermark-designs.com">
-						<img src="featured/watermark.webp"/>
-					</a>
+					<img src="featured/watermark.webp"/>
+					<div class="overlay-background" id="overlay-watermark"></div>
+					<div class="overlay-text disabled" id="overlay-watermark-text">
+						<a href="https://www.watermark-designs.com">
+							www.watermark-designs.com
+						</a>
+					</div>
 				</div>
 				<div class="featured-cell">
-					<a href="https://www.armacmartin.com">
-						<img src="featured/armac.webp"/>
-					</a>
+					<img src="featured/armac.webp"/>
+					<div class="overlay-background" id="overlay-armac"></div>
+					<div class="overlay-text disabled" id="overlay-armac-text">
+						<a href="https://www.armacmartin.com">
+							www.armacmartin.com
+						</a>
+					</div>
 				</div>
 				<div class="featured-cell">
-					<a href="https://www.rockymountainhardware.com">
-						<img src="featured/rocky.webp"/>
-					</a>
+					<img src="featured/rocky.webp"/>
+					<div class="overlay-background" id="overlay-rocky"></div>
+					<div class="overlay-text disabled" id="overlay-rocky-text">
+						<a href="https://www.rockymountainhardware.com">
+							www.rockymountainhardware.com
+						</a>
+					</div>
 				</div>
 				<div class="featured-cell">
-					<a href="https://www.watermark-designs.com">
-						<img src="featured/kallista.webp"/>
-					</a>
+					<div class="overlay-background" id="overlay-kallista"></div>
+					<img src="featured/kallista.webp"/>
+					<div class="overlay-text disabled" id="overlay-kallista-text">
+						<a href="https://www.kallista.com">
+							www.kallista.com
+						</a>
+					</div>
 				</div>
 				<div class="featured-cell">
-					<a href="https://www.thg-paris.com/us/en">
-						<img src="featured/thg.webp"/>
-					</a>
+					<div class="overlay-background" id="overlay-thg"></div>
+					<img src="featured/thg.webp"/>
+					<div class="overlay-text disabled" id="overlay-thg-text">
+						<a href="https://www.thg-paris.com/us/en">
+							www.thg-paris.com
+						</a>
+					</div>
 				</div>
 				<div class="featured-cell">
-					<a href="https://www.calfaucets.com">
-						<img src="featured/calfaucets.webp"/>
-					</a>
+					<div class="overlay-background" id="overlay-calfaucets"></div>
+					<img src="featured/calfaucets.webp"/>
+					<div class="overlay-text disabled" id="overlay-calfaucets-text">
+						<a href="https://www.calfaucets.com">
+							www.calfaucets.com
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
 		
 
-		<div class="plumbing hide">
+		<div class="hardware">
 			<div class="collection">
 				<div class="brand">
-					<div>Axor</div>
-					<div>UK Made Cabinet Grilles & Cabinet Hardware</div>
+					<div class="brand-name" id="armac">Armac Martin</div>
+					<div class="brand-desc" id="desc-armac">UK Made Cabinet Grilles & Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-armac"><a href="https://www.armacmartin.com">www.armacmartin.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Bates Sinks</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="atlas">Atlas Homewares</div>
+					<div class="brand-desc" id="desc-atlas">Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-atlas"><a href="https://www.atlashomewares.com">www.atlashomewares.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Bain Ultra</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="ashley">Ashley Norton</div>
+					<div class="brand-desc" id="desc-ashley">Bronze and Brass Door and Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-ashley"><a href="https://www.ashleynorton.com">www.ashleynorton.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Blanco</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="baldwin">Baldwin</div>
+					<div class="brand-desc" id="desc-baldwin">Brass Door and Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-baldwin"><a href="https://www.baldwinhardware.com">www.baldwinhardware.com</a></div>
 				</div>
 				<div class="brand">
-					<div>California Faucets</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="classic">Classic Brass</div>
+					<div class="brand-desc" id="desc-classic">US Made Door and Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-classic"><a href="https://www.classic-brass.com">www.classic-brass.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Cheviot</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="colonial">Colonial Bronze</div>
+					<div class="brand-desc" id="desc-colonial">Brass Cabinet Hardware. Made in the US.</div>
+					<div class="brand-web hide" id="web-colonial"><a href="https://www.colonialbronze.com">www.colonialbronze.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Dornbracht</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="berebi">Edgar Berebi</div>
+					<div class="brand-desc" id="desc-berebi">Ornately Designed Cabinet Hardware. Made in the US.</div>
+					<div class="brand-web hide" id="web-berebi"><a href="https://aachardware.com">www.aachardware.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Franke</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="fsb">FSB</div>
+					<div class="brand-desc" id="desc-fsb">German Made Stainless Steel Door Hardware</div>
+					<div class="brand-web hide" id="web-fsb"><a href="https://www.fsbna.com/us/">www.fsbna.com/us</a></div>
 				</div>
 				<div class="brand">
-					<div>Franz Viegener</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="kennett">Ged Kennett</div>
+					<div class="brand-desc" id="desc-kennett">UK Handmade Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-kennett"><a href="https://gedkennett.co.uk">www.gedkennett.co.uk</a></div>
 				</div>
 				<div class="brand">
-					<div>Ginger</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="hapny">Hapny</div>
+					<div class="brand-desc" id="desc-hapny">Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-hapny"><a href="https://hapnyhome.com">www.hapnyhome.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Hansgrohe</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="sinkler">Hamilton Sinkler</div>
+					<div class="brand-desc" id="desc-sinkler">Brass Door and Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-sinkler"><a href="https://hamiltonsinkler.com">www.hamiltonsinkler.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Horus</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="renaissance">Hardware Renaissance</div>
+					<div class="brand-desc" id="desc-renaissance">Bronze and Iron Door and Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-renaissance"><a href="https://hardwarerenaissance.com">www.hardwarerenaissance.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Hydro Systems</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="krown">Krown Lab</div>
+					<div class="brand-desc" id="desc-krown">Sliding Barn Door Hardware. Made in the US.</div>
+					<div class="brand-web hide" id="web-krown"><a href="https://krownlab.com">www.krownlab.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Julien</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="nest">Nest Studio</div>
+					<div class="brand-desc" id="desc-nest">Unique and Eclectic Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-nest"><a href="https://neststudiocollection.com">www.neststudiocollection.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Kallista</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="rki">RK International</div>
+					<div class="brand-desc" id="desc-rki">Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-rki"><a href="https://rkintl.com">www.rkintl.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Kartners</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="rocky">Rocky Mountain Hardware</div>
+					<div class="brand-desc" id="desc-rocky">US Made Bronze Door and Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-rocky"><a href="https://www.rockymountainhardware.com">www.rockymountainhardware.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Kast</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="samheath">Samuel Heath</div>
+					<div class="brand-desc" id="desc-samheath">Brass Door Hardware. Made in the UK.</div>
+					<div class="brand-web hide" id="web-samheath"><a href="https://www.samuel-heath.com/us">www.samuel-heath.com/us</a></div>
 				</div>
 				<div class="brand">
-					<div>Link-A-Sink</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="schaub">Schaub</div>
+					<div class="brand-desc" id="desc-schaub">Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-schaub"><a href="https://schaubandcompany.com">www.schaubandcompany.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Marzi</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="sietto">Sietto</div>
+					<div class="brand-desc" id="desc-sietto">US Made Cabinet Hardware Featuring Glass Designs</div>
+					<div class="brand-web hide" id="web-sietto"><a href="https://sietto.com">www.sietto.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Milla</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="tannerscraft">Tanner's Craft</div>
+					<div class="brand-desc" id="desc-tannerscraft">US Made Cabinet Hardware and Door Pulls With Leather Designs</div>
+					<div class="brand-web hide" id="web-tannerscraft"><a href="https://tannerscraft.com">www.tannerscraft.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Mr. Steam</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="topknobs">Top Knobs</div>
+					<div class="brand-desc" id="desc-topknobs">Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-topknobs"><a href="https://www.topknobs.com">www.topknobs.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Newport Brass</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="turnstyle">Turnstyle Designs</div>
+					<div class="brand-desc" id="desc-turnstyle">UK Made Door and Cabinet Hardware With Leather Designs</div>
+					<div class="brand-web hide" id="web-turnstyle"><a href="https://www.turnstyledesigns.com">www.turnstyledesigns.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Perrin & Rowe</div>
-					<div>German maker of bath and kitchen fixtures.</div>
+					<div class="brand-name" id="vesta">Vesta</div>
+					<div class="brand-desc" id="desc-vesta">Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-vesta"><a href="https://www.vestafinehardware.com">www.vestafinehardware.com</a></div>
 				</div>
 				<div class="brand">
-					<div>Phylrich</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-				<div class="brand">
-					<div>Rohl</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-				<div class="brand">
-					<div>Samuel Heath</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-				<div class="brand">
-					<div>Perrin & Rowe</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-				<div class="brand">
-					<div>Shaws</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-				<div class="brand">
-					<div>THG Paris</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-				<div class="brand">
-					<div>Toto</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-				<div class="brand">
-					<div>Victoria + Albert</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-				<div class="brand">
-					<div>Waterstone</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-				<div class="brand">
-					<div>Watermark Designs</div>
-					<div>German maker of bath and kitchen fixtures.</div>
-				</div>
-			</div>
-		</div>
-		<div class="hardware hide">
-			<div class="collection">
-				<div class="brand">
-					<div><a href="https://www.armacmartin.com">Armac Martin</a></div>
-					<div>UK Made Cabinet Grilles & Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.atlashomewares.com">Atlas Homewares</a></div>
-					<div>Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.ashleynorton.com">Ashley Norton</a></div>
-					<div>Bronze and Brass Door and Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.baldwinhardware.com">Baldwin</a></div>
-					<div>Brass Door and Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.classic-brass.com">Classic Brass</a></div>
-					<div>US Made Door and Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.colonialbronze.com">Colonial Bronze</a></div>
-					<div>Brass Cabinet Hardware. Made in the US.</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://aachardware.com">Edgar Berebi</a></div>
-					<div>Ornately Designed Cabinet Hardware. Made in the US.</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.fsbna.com/us/">FSB</a></div>
-					<div>German Made Stainless Steel Door Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://gedkennett.co.uk">Ged Kennett</a></div>
-					<div>UK Handmade Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://hapnyhome.com">Hapny</a></div>
-					<div>Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://hamiltonsinkler.com">Hamilton Sinkler</a></div>
-					<div>Brass Door and Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://hardwarerenaissance.com">Hardware Renaissance</a></div>
-					<div>Bronze and Iron Door and Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://krownlab.com">Krown Lab</a></div>
-					<div>Sliding Barn Door Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://neststudiocollection.com">Nest Studio</a></div>
-					<div>Unique and Eclectic Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://rkintl.com">RK International</a></div>
-					<div>Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.rockymountainhardware.com">Rocky Mountain Hardware</a></div>
-					<div>US Made Bronze Door and Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.samuel-heath.com/us">Samuel Heath</a></div>
-					<div>Brass Door Hardware. Made in the UK.</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://schaubandcompany.com">Schaub</a></div>
-					<div>Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://sietto.com">Sietto</a></div>
-					<div>US Made Cabinet Hardware Featuring Glass Designs</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://tannerscraft.com">Tanner's Craft</a></div>
-					<div>US Made Cabinet Hardware and Door Pulls With Leather Designs</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.topknobs.com">Top Knobs</a></div>
-					<div>Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.turnstyledesigns.com">Turnstyle Designs</a></div>
-					<div>UK Made Door and Cabinet Hardware With Leather Designs</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.vestafinehardware.com">Vesta</a></div>
-					<div>Cabinet Hardware</div>
-				</div>
-				<div class="brand">
-					<div><a href="https://www.waterstreetbrass.com">Water Street Brass</a></div>
-					<div>US Made Brass Door and Cabinet Hardware</div>
+					<div class="brand-name" id="waterstreet">Water Street Brass</div>
+					<div class="brand-desc" id="desc-waterstreet">US Made Brass Door and Cabinet Hardware</div>
+					<div class="brand-web hide" id="web-waterstreet"><a href="https://www.waterstreetbrass.com">www.waterstreetbrass.com</a></div>
 				</div>
 			</div>		
 		</div>
+		<div class="plumbing">
+			<div class="collection">
+				<div class="brand">
+					<div class="brand-name" id="axor">Axor</div>
+					<div class="brand-desc" id="desc-axor">German Made Bath and Kitchen Fixtures</div>
+					<div class="brand-web hide" id="web-axor"><a href="https://www.axor-design.com/us">www.axor-design.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="bates">Bates Sinks</div>
+					<div class="brand-desc" id="desc-bates">Metal Sinks for Bar and Bath</div>
+					<div class="brand-web hide" id="web-bates"><a href="https://alnoinc.com/bates-and-bates-products/">www.alnoinc.com/bates-and-bates-products</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="bain">Bain Ultra</div>
+					<div class="brand-desc" id="desc-bain">Leaders in Therapeutic Bathing. Made in Canada.</div>
+					<div class="brand-web hide" id="web-bain"><a href="https://bainultra.com">www.bainultra.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="blanco">Blanco</div>
+					<div class="brand-desc" id="desc-blanco">German Manufacturer of Stainless and Silgranit Sinks</div>
+					<div class="brand-web hide" id="web-blanco"><a href="https://www.blanco.com/us-en/">www.blanco.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="calfaucets">California Faucets</div>
+					<div class="brand-desc" id="desc-calfaucets">US Made Bath and Kitchen Fixtures</div>
+					<div class="brand-web hide" id="web-calfaucets"><a href="https://www.calfaucets.com">www.calfaucets.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="cheviot">Cheviot</div>
+					<div class="brand-desc" id="desc-cheviot">European Made Cast Iron Tubs</div>
+					<div class="brand-web hide" id="web-cheviot"><a href="https://cheviotproducts.com">www.cheviotproducts.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="dornbracht">Dornbracht</div>
+					<div class="brand-desc" id="desc-dornbracht">German Made Bath and Kitchen Fixtures</div>
+					<div class="brand-web hide" id="web-dornbracht"><a href="https://www.dornbracht.com/en/">www.dornbracht.com/en</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="franke">Franke</div>
+					<div class="brand-desc" id="desc-franke">Swiss brand for Kitchen Sinks and Fixtures</div>
+					<div class="brand-web hide" id="web-franke"><a href="https://www.franke.com/us/en/home-solutions.html">www.franke.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="viegener">Franz Viegener</div>
+					<div class="brand-desc" id="desc-viegener">Distinctive Bath and Kitchen Fixtures. Made in Argentina.</div>
+					<div class="brand-web hide" id="web-viegener"><a href="https://www.franzviegener.com">www.franzviegener.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="ginger">Ginger</div>
+					<div class="brand-desc" id="desc-ginger">Bath Accessories</div>
+					<div class="brand-web hide" id="web-ginger"><a href="https://www.gingerco.com">www.gingerco.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="hansgrohe">Hansgrohe</div>
+					<div class="brand-desc" id="desc-hansgrohe">Bath and Kitchen Fixtures</div>
+					<div class="brand-web hide" id="web-hansgrohe"><a href="https://www.hansgrohe-usa.com">www.hansgrohe-usa.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="horus">Horus</div>
+					<div class="brand-desc" id="desc-horus">Luxury Bath and Kitchen Fixtures. Made in France.</div>
+					<div class="brand-web hide" id="web-horus"><a href="https://www.horusfrance.com/en/">www.horusfrance.com/en/</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="hydro">Hydro Systems</div>
+					<div class="brand-desc" id="desc-hydro">US Made Freestanding and Drop-in Bathtubs</div>
+					<div class="brand-web hide" id="web-hydro"><a href="https://hydrosystem.com">www.hydrosystem.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="julien">Julien</div>
+					<div class="brand-desc" id="desc-julien">Canadian Made Custom Stainless Kitchen Sinks</div>
+					<div class="brand-web hide" id="web-julien"><a href="https://www.homerefinements.ca/en_us/">www.julien.ca</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="jandelle">Jandelle Paris</div>
+					<div class="brand-desc" id="desc-jandelle">Metal Sinks for Bath & Bar. Made in France.</div>
+					<div class="brand-web hide" id="web-jandelle"><a href="https://www.jandelle.com/en">www.jandelle.com/en</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="kallista">Kallista</div>
+					<div class="brand-desc" id="desc-kallista">European Made Bath and Kitchen Fixtures, Sinks, & Tubs</div>
+					<div class="brand-web hide" id="web-kallista"><a href="https://www.kallista.com">www.kallista.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="kartners">Kartners</div>
+					<div class="brand-desc" id="desc-kartners">Bath Accessories & Towel Warmers</div>
+					<div class="brand-web hide" id="web-kartners"><a href="https://www.kartners.com">www.kartners.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="kast">Kast</div>
+					<div class="brand-desc" id="desc-kast">UK Maker of Concrete Sinks in Stylish Colors</div>
+					<div class="brand-web hide" id="web-kast"><a href="https://kastconcretebasins.com">www.kastconcretebasins.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="linkasink">Link-A-Sink</div>
+					<div class="brand-desc" id="desc-linkasink">Eclectic Collection of Sinks for Bath, Kitchen, & Bar</div>
+					<div class="brand-web hide" id="web-linkasink"><a href="https://www.linkasink.com">www.linkasink.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="marzi">Marzi</div>
+					<div class="brand-desc" id="desc-marzi">Handcrafted Sinks for the Bath. Made in the US.</div>
+					<div class="brand-web hide" id="web-marzi"><a href="https://marzisinks.com">www.marzisinks.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="milla">Mila</div>
+					<div class="brand-desc" id="desc-milla">US Made Kitchen Sinks and Accessories</div>
+					<div class="brand-web hide" id="web-milla"><a href="https://mila-international.com">www.mila-international.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="mrsteam">Mr. Steam</div>
+					<div class="brand-desc" id="desc-mrsteam">Steam Showers Made in the US</div>
+					<div class="brand-web hide" id="web-mrsteam"><a href="https://www.mrsteam.com">www.mrsteam.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="newport">Newport Brass</div>
+					<div class="brand-desc" id="desc-newport">US Manufacturer of Bath and Kitchen Fixtures</div>
+					<div class="brand-web hide" id="web-newport"><a href="https://www.newportbrass.com">www.newportbrass.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="perrinrowe">Perrin & Rowe</div>
+					<div class="brand-desc" id="desc-perrinrowe">UK Made Bath and Kitchen Fixtures</div>
+					<div class="brand-web hide" id="web-perrinrowe"><a href="https://houseofrohl.com/perrin-and-rowe/">www.houseofrohl.com/perrin-and-rowe</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="phylrich">Phylrich</div>
+					<div class="brand-desc" id="desc-phylrich">US Made Bath Fixtures</div>
+					<div class="brand-web hide" id="web-phylrich"><a href="https://phylrich.com">www.phylrich.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="rohl">Rohl</div>
+					<div class="brand-desc" id="desc-rohl">Bath and Kitchen Fixtures from Italy and Others</div>
+					<div class="brand-web hide" id="web-rohl"><a href="https://houseofrohl.com/rohl/">www.houseofrohl.com/rohl</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="samheath">Samuel Heath</div>
+					<div class="brand-desc" id="desc-samheath">UK Made Bath and Kitchen Fixtures</div>
+					<div class="brand-web hide" id="web-samheath"><a href="https://www.samuel-heath.com/us">www.samuel-heath.com/us</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="shaws">Shaws</div>
+					<div class="brand-desc" id="desc-shaws">UK Made Fireclay Sinks for Kitchen & Bar</div>
+					<div class="brand-web hide" id="web-shaws"><a href="https://houseofrohl.com/shaws/">www.houseofrohl.com/shaws</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="stoneforest">Stone Forest</div>
+					<div class="brand-desc" id="desc-stoneforest">Sinks, Stone Tubs, and Bath Furniture</div>
+					<div class="brand-web hide" id="web-stoneforest"><a href="https://stoneforest.com">www.stoneforest.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="thg">THG Paris</div>
+					<div class="brand-desc" id="desc-thg">Luxury Bath and Kitchen Fixtures. Made in France.</div>
+					<div class="brand-web hide" id="web-thg"><a href="https://www.thg-paris.com/us/en">www.thg-paris.com/us/en</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="toto">Toto</div>
+					<div class="brand-desc" id="desc-toto">Japanese Brand for High-Performance Toilets & Washlets</div>
+					<div class="brand-web hide" id="web-toto"><a href="https://www.totousa.com">www.totousa.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="victoriaalbert">Victoria + Albert</div>
+					<div class="brand-desc" id="desc-victoriaalbert">Volcanic Limestone Freestanding Tubs</div>
+					<div class="brand-web hide" id="web-victoriaalbert"><a href="https://houseofrohl.com/victoria-and-albert/">www.houseofrohl.com/victoria-and-albert</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="waterstone">Waterstone</div>
+					<div class="brand-desc" id="desc-waterstone">US Made Kitchen Faucets</div>
+					<div class="brand-web hide" id="web-waterstone"><a href="https://waterstoneco.com">www.waterstoneco.com</a></div>
+				</div>
+				<div class="brand">
+					<div class="brand-name" id="watermark">Watermark Designs</div>
+					<div class="brand-desc" id="desc-watermark">US Made Bath and Kitchen Fixtures</div>
+					<div class="brand-web hide" id="web-watermark"><a href="https://watermark-designs.com">www.watermark-designs.com</a></div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 	</main>
 	<script>
 		const featuredButton = document.getElementById('featured-button');
 		const hardwareButton = document.getElementById('hardware-button');
 		const plumbingButton = document.getElementById('plumbing-button');
-		featuredButton.addEventListener('click', function () {
-			featuredButton.classList.add('selected-category');
+		
+		function setCategory(category) {
+			sessionStorage.setItem('selected-category', category);
+			featuredButton.classList.remove('selected-category');
 			hardwareButton.classList.remove('selected-category');
 			plumbingButton.classList.remove('selected-category');
 			const featured = document.querySelectorAll('.featured');
 			for (let i = 0; i < featured.length; i++) {
-				const element = featured[i];
-				// 3. Add the 'classToAdd' to the current element's class list
-				element.classList.remove('hide');
+				featured[i].classList.add('hide');
 			};
 			const hardware = document.querySelectorAll('.hardware');
 			for (let i = 0; i < hardware.length; i++) {
-				const element = hardware[i];
-				// 3. Add the 'classToAdd' to the current element's class list
-				element.classList.add('hide');
+				hardware[i].classList.add('hide');
 			};
 			const plumbing = document.querySelectorAll('.plumbing');
 			for (let i = 0; i < plumbing.length; i++) {
-				const element = plumbing[i];
-				// 3. Add the 'classToAdd' to the current element's class list
-				element.classList.add('hide');
+				plumbing[i].classList.add('hide');
 			};
+
+			if (category == 'hardware') {
+				hardwareButton.classList.add('selected-category');
+				for (let i = 0; i < hardware.length; i++) {
+					hardware[i].classList.remove('hide');
+				};
+			} else if (category == 'plumbing') {
+				plumbingButton.classList.add('selected-category');
+				for (let i = 0; i < plumbing.length; i++) {
+					plumbing[i].classList.remove('hide');
+				};
+			} else {
+				featuredButton.classList.add('selected-category');
+				for (let i = 0; i < featured.length; i++) {
+					featured[i].classList.remove('hide');
+				};
+			}
+		}
+
+		featuredButton.addEventListener('click', function () {
+			setCategory('featured');
 		});
 		hardwareButton.addEventListener('click', function () {
-			featuredButton.classList.remove('selected-category');
-			hardwareButton.classList.add('selected-category');
-			plumbingButton.classList.remove('selected-category');
-			
-			const featured = document.querySelectorAll('.featured');
-			for (let i = 0; i < featured.length; i++) {
-				const element = featured[i];
-				// 3. Add the 'classToAdd' to the current element's class list
-				element.classList.add('hide');
-			};
-			const hardware = document.querySelectorAll('.hardware');
-			for (let i = 0; i < hardware.length; i++) {
-				const element = hardware[i];
-				// 3. Add the 'classToAdd' to the current element's class list
-				element.classList.remove('hide');
-			};
-			const plumbing = document.querySelectorAll('.plumbing');
-			for (let i = 0; i < plumbing.length; i++) {
-				const element = plumbing[i];
-				// 3. Add the 'classToAdd' to the current element's class list
-				element.classList.add('hide');
-			};
-		});
+			setCategory('hardware');
+		});		
 		plumbingButton.addEventListener('click', function () {
-			featuredButton.classList.remove('selected-category');
-			hardwareButton.classList.remove('selected-category');
-			plumbingButton.classList.add('selected-category');
-			const featured = document.querySelectorAll('.featured');
-			for (let i = 0; i < featured.length; i++) {
-				const element = featured[i];
-				// 3. Add the 'classToAdd' to the current element's class list
-				element.classList.add('hide');
-			};
-			const hardware = document.querySelectorAll('.hardware');
-			for (let i = 0; i < hardware.length; i++) {
-				const element = hardware[i];
-				// 3. Add the 'classToAdd' to the current element's class list
-				element.classList.add('hide');
-			};
-			const plumbing = document.querySelectorAll('.plumbing');
-			for (let i = 0; i < plumbing.length; i++) {
-				const element = plumbing[i];
-				// 3. Add the 'classToAdd' to the current element's class list
-				element.classList.remove('hide');
-			};
+			setCategory('plumbing');
 		});
+		
+		const category = sessionStorage.getItem('selected-category');
+		if (category == null) {
+			setCategory('featured');
+		} else {
+			setCategory(category);
+		}
+		
+		const array = document.querySelectorAll('.brand-name');
+		for (let i = 0; i < array.length; i++) {
+			array[i].addEventListener('click', function() {
+				const web = document.querySelectorAll('.brand-web');
+				for (let j = 0; j < web.length; j++) {
+					if (web[j].id != `web-${this.id}`) {
+						web[j].classList.add('hide');
+					} else {
+						console.log("skip");
+					}
+				}
+				const desc = document.querySelectorAll('.brand-desc');
+				for (let k = 0; k < desc.length; k++) {
+					if (desc[k].id != `desc-${this.id}`) {
+						desc[k].classList.remove('hide');
+					}
+				}
+				const descElement = document.querySelector(`#desc-${this.id}`);
+				descElement.classList.toggle('hide');
+				const webElement = document.querySelector(`#web-${this.id}`);
+				webElement.classList.toggle('hide');
+			});
+		};
+		
+		const overlayArray = document.querySelectorAll('.overlay-background');
+		overlayArray.forEach(function(element) {
+			console.log("The current number is:", element.id);			
+			element.addEventListener('click', function() {				
+				const overlayArray = document.querySelectorAll('.overlay-background');
+				overlayArray.forEach(function(element) {
+					if (element.id != this.id) {
+						element.classList.remove('enabled');
+						const text = document.querySelector(`#${element.id}-text`);
+						text.classList.remove('enabled');
+					}
+				});				
+				console.log("The current number is:", this.id);
+				this.classList.toggle('enabled');
+				const text = document.querySelector(`#${this.id}-text`);
+				text.classList.toggle('enabled');
+			});
+		});
+
+
+
+
 	</script>
 	<script src="common.js"></script>
 </body>
