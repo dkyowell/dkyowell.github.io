@@ -11,13 +11,15 @@
 	<style>
 		.categories {
 			padding: 1em;
-			display: grid;
+			display: flex;
 			grid-template-columns: repeat(3, 1fr);
-			/* gap: 10px; */
+			gap: 10px;
+			justify-content: space-around;
 		}
 
 		.categories button {
-			width: 100%;
+			padding-left: 1em;
+			padding-right: 1em;
 			font-family: "Poppins", sans-serif;
 			font-weight: 300;
 			font-style: normal;
@@ -46,25 +48,18 @@
 			grid-template-columns: 33% auto;
 			cursor: arrow;
 			user-select: none; 
-			font-weight: 200;
+			font-weight: 300;
 		}
 		
 		.brand.enabled {
 			opacity: 10%;
 		}
+		
 		.brand-name {
-			-webkit-user-select: none; /* Safari */
-			-moz-user-select: none;    /* Firefox */
-			-ms-user-select: none;     /* IE10+/Edge */
-			user-select: none; 
 			font-weight: 400;
 		}
-
 		.brand-desc {
-			-webkit-user-select: none; /* Safari */
-			-moz-user-select: none;    /* Firefox */
-			-ms-user-select: none;     /* IE10+/Edge */
-			user-select: none; 
+			opacity: 0.9;
 		}
 
 		.featured-flex {
@@ -99,10 +94,6 @@
 			opacity: 100; /* Initially hide the overlay */
 		}
 		
-		/* .collection.overlay-background {
-			background-color: rgba(0, 0, 0, 0.8);
-		} */
-
 		.overlay-text {
 			position: absolute; /* Position the text over the image */
 			top: 50%;
@@ -345,7 +336,7 @@
 				<div class="overlay-cell">
 					<div class="brand" id="overlay-berebi-brand">
 						<div class="brand-name">Edgar Berebi</div>
-						<div class="brand-desc">Ornately Designed Cabinet Hardware. Made in the US.</div>
+						<div class="brand-desc">Ornate Cabinet Hardware. Made in the US.</div>
 					</div>
 					<div class="overlay-background" id="overlay-berebi"></div>
 					<div class="overlay-text" id="overlay-berebi-text">
