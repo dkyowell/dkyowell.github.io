@@ -8,53 +8,14 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
-	<script>
-		document.addEventListener('DOMContentLoaded', () => {
-		const images = document.querySelectorAll('.image-fader .fade-image');
-		const fadeInterval = 7000; // Time each image is shown (in milliseconds) + transition time
-		let currentImageIndex = 0;
-		
-		if (images.length > 1) {
-			// Ensure the first image is initially active if not set in HTML
-			if (!images[currentImageIndex].classList.contains('active')) {
-				images[currentImageIndex].classList.add('active');
-			}
-		
-			setInterval(() => {
-			  // Remove active class from current image
-			  images[currentImageIndex].classList.remove('active');
-		
-			  // Increment index, looping back to 0 if needed
-			  currentImageIndex = (currentImageIndex + 1) % images.length;
-		
-			  // Add active class to the next image
-			  images[currentImageIndex].classList.add('active');
-		
-			}, fadeInterval);
-		
-		  } else if (images.length === 1) {
-			  // Only one image, make sure it's active
-			  images[0].classList.add('active');
-			  console.log("Only one image found, slideshow not started.");
-		  } else {
-			  console.error("Error: No images found with the class 'fade-image' inside '.image-fader'.");
-		  }
-		});
-	</script>
 	<style>
 		html {
-			/* //height: 100%; */
 			/* background-image: url("media/background-b.webp");
 			background-size: cover;
 			background-position: center;
 			background-attachment: initial; */
-			margin: 0px;
-			padding: 0px;
-			//background: rgba(242, 242, 242, 1);
-			color: rgba(44, 44, 44, 1);
-			color: #0d161e
-			/* color: rgba(255, 255, 255, .90);
-			stroke: rgba(255, 255, 255, .90) */
+			//color: rgba(44, 44, 44, 1);
+			//color: #0d161e
 		}
 
 		body {
@@ -114,12 +75,9 @@
 		.tagline {
 			font-size: 28px;
 			font-family: "Poppins", sans-serif;
-			//font-optical-sizing: auto;
-			//font-family: "Poppins", sans-serif;
 			font-weight: 200;
 			line-height: 1.25;
 			text-align: left;
-			//width: 100%;
 		}	
 		
 		@media screen and (max-width: 640px) {
@@ -137,24 +95,21 @@
 </head>
 <body>
 	<header>
-	<div id="header">
-		<div class="header">
-			<div class="logo">
-				Hollywood Hardware
+		<div id="header">
+			<div id="logo">
+				<img src="logo2.webp"/>
 			</div>
-			<div class="navbar">
+			<div id="header-nav">
 				<div class="navitem"><a href="showroom.html">Contact & Info</a></div>
 				<div class="navitem"><a href="collections.html">Collections</a></div>
 				<div class="navitem"><a href="about.html">Our Story</a></div>
 			</div>
-			<div class="navbutton">
-				<button id="menu-button" class="">
-					<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<line id="line-top" x1="4" y1="6" x2="20" y2="6" />
-						<line id="line-middle" x1="4" y1="12" x2="20" y2="12" />
-						<line id="line-bottom" x1="4" y1="18" x2="20" y2="18" />
-					</svg>
-				</button>
+			<div id="menu-button">
+				<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<line id="line-top" x1="4" y1="6" x2="20" y2="6" />
+					<line id="line-middle" x1="4" y1="12" x2="20" y2="12" />
+					<line id="line-bottom" x1="4" y1="18" x2="20" y2="18" />
+				</svg>
 			</div>		
 		</div>
 		<div id="popdown">
@@ -162,7 +117,6 @@
 			<div class="navitem"><a href="collections.html">Collections</a></div>
 			<div class="navitem"><a href="about.html">Our Story</a></div>
 		</div>
-	</div>
 	</header>
 	<main>
 		<div class="section-one">
@@ -176,27 +130,56 @@
 		</div>
 		<div class="section-two">
 			<div class="tagline">
-				Fine Kitchens, Baths<br/>
-				& Architectural Hardware
+				Architectural Hardware<br/>
+				& Fixtures for Kitchen and Bath
 			</div>
 		</div>
 	</main>
 	<footer>
-		<div id="bottombar">
+		<div id="footer-nav">
 			<div class="navitem"><a href="showroom.html">Contact & Info</a></div>
 			<div class="navitem"><a href="collections.html">Collections</a></div>
 			<div class="navitem"><a href="about.html">Our Story</a></div>
 		</div>
-		<div class="infobar">
+		<div id="footer-info">
 			<div><a href="mailto:info@hollywoodhardware.com">info@hollywoodhardware.com</a></div>
 			<div><a href="tel:713-644-8301">713.644.8301</a></div>
 		</div>
-
-		<!-- <div class="flexrow" style="font-size: 10pt" >
-			<div><a href="mailto:info@hollywoodhardware.com">info@hollywoodhardware.com</a></div>
-			<div><a href="tel:713-644-8301">713.644.8301</a></div>
-		</div> -->
 	</footer>
 	<script src="common.js"></script>
+	<script>
+		document.addEventListener('DOMContentLoaded', () => {
+		const images = document.querySelectorAll('.image-fader .fade-image');
+		const fadeInterval = 7000; // Time each image is shown (in milliseconds) + transition time
+		let currentImageIndex = 0;
+		
+		if (images.length > 1) {
+			// Ensure the first image is initially active if not set in HTML
+			if (!images[currentImageIndex].classList.contains('active')) {
+				images[currentImageIndex].classList.add('active');
+			}
+		
+			setInterval(() => {
+			  // Remove active class from current image
+			  images[currentImageIndex].classList.remove('active');
+		
+			  // Increment index, looping back to 0 if needed
+			  currentImageIndex = (currentImageIndex + 1) % images.length;
+		
+			  // Add active class to the next image
+			  images[currentImageIndex].classList.add('active');
+		
+			}, fadeInterval);
+		
+		  } else if (images.length === 1) {
+			  // Only one image, make sure it's active
+			  images[0].classList.add('active');
+			  console.log("Only one image found, slideshow not started.");
+		  } else {
+			  console.error("Error: No images found with the class 'fade-image' inside '.image-fader'.");
+		  }
+		});
+	</script>
+	
 </body>
 </html>

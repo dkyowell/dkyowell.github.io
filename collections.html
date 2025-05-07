@@ -17,7 +17,7 @@
 			justify-content: space-around;
 		}
 
-		.categories button {
+		.category {
 			padding-left: 1em;
 			padding-right: 1em;
 			font-family: "Poppins", sans-serif;
@@ -28,18 +28,18 @@
 			cursor: pointer;
 		}
 		
-		.categories .selected-category {
+		.category.selected {
 			border-bottom: 1px solid rgb(102, 19, 19); 
 		}
 
 		/* Style for the odd rows */
 		.collection > *:nth-child(odd) {
-			background-color: #f6f6f6; /* Light gray background for odd rows */
+			background-color: rgba(0, 0, 0, 0.05); /* Light gray background for odd rows */
 		}
 		
 		/* Style for the even rows */
 		.collection > *:nth-child(even) {
-			background-color: #ffffff; /* White background for even rows */
+			//background-color: #ffffff; /* White background for even rows */
 		}
 		
 		.brand {
@@ -148,24 +148,21 @@
 </head>
 <body>
 	<header>
-	<div id="header">
-		<div class="header">
-			<div class="logo">
-				<a href="index.html">Hollywood Hardware</a>
+		<div id="header">
+			<div id="logo">
+				<a href="index.html"><img src="logo2.webp"/></a>
 			</div>
-			<div class="navbar">
+			<div id="header-nav">
 				<div class="navitem"><a href="showroom.html">Contact & Info</a></div>
 				<div class="navitem selected">Collections</div>
 				<div class="navitem"><a href="about.html">Our Story</a></div>
 			</div>
-			<div class="navbutton">
-				<button id="menu-button" class="">
-					<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-						<line id="line-top" x1="4" y1="6" x2="20" y2="6" />
-						<line id="line-middle" x1="4" y1="12" x2="20" y2="12" />
-						<line id="line-bottom" x1="4" y1="18" x2="20" y2="18" />
-					</svg>
-				</button>
+			<div id="menu-button">
+				<svg height="24" width="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<line id="line-top" x1="4" y1="6" x2="20" y2="6" />
+					<line id="line-middle" x1="4" y1="12" x2="20" y2="12" />
+					<line id="line-bottom" x1="4" y1="18" x2="20" y2="18" />
+				</svg>
 			</div>		
 		</div>
 		<div id="popdown">
@@ -173,27 +170,20 @@
 			<div class="navitem"><a href="collections.html">Collections</a></div>
 			<div class="navitem"><a href="about.html">Our Story</a></div>
 		</div>
-	</div>
 	</header>
 	<main>
 	<div class="subhead">
 		Showroom Collections
 	</div>
 	<div class="categories">
-		<div>
-			<button id="featured-button" class="selected-category">
-				Featured
-			</button>
+		<div id="featured-button" class="category">
+			Featured
 		</div>
-		<div>
-			<button id="hardware-button">
-				Hardware
-			</button>
+		<div id="hardware-button" class="category">
+			Hardware
 		</div>
-		<div>
-			<button id="plumbing-button">
-				Plumbing
-			</button>
+		<div id="plumbing-button" class="category">
+			Plumbing
 		</div>
 	</div>
 		
@@ -960,37 +950,37 @@
 		const plumbingButton = document.getElementById('plumbing-button');
 		
 		function setCategory(category) {
-			sessionStorage.setItem('selected-category', category);
-			featuredButton.classList.remove('selected-category');
-			hardwareButton.classList.remove('selected-category');
-			plumbingButton.classList.remove('selected-category');
+			sessionStorage.setItem('selected', category);
+			featuredButton.classList.remove('selected');
+			hardwareButton.classList.remove('selected');
+			plumbingButton.classList.remove('selected');
 			const featured = document.querySelectorAll('.featured');
 			for (let i = 0; i < featured.length; i++) {
-				featured[i].classList.add('hide');
+				featured[i].classList.add('hidden');
 			};
 			const hardware = document.querySelectorAll('.hardware');
 			for (let i = 0; i < hardware.length; i++) {
-				hardware[i].classList.add('hide');
+				hardware[i].classList.add('hidden');
 			};
 			const plumbing = document.querySelectorAll('.plumbing');
 			for (let i = 0; i < plumbing.length; i++) {
-				plumbing[i].classList.add('hide');
+				plumbing[i].classList.add('hidden');
 			};
 
 			if (category == 'hardware') {
-				hardwareButton.classList.add('selected-category');
+				hardwareButton.classList.add('selected');
 				for (let i = 0; i < hardware.length; i++) {
-					hardware[i].classList.remove('hide');
+					hardware[i].classList.remove('hidden');
 				};
 			} else if (category == 'plumbing') {
-				plumbingButton.classList.add('selected-category');
+				plumbingButton.classList.add('selected');
 				for (let i = 0; i < plumbing.length; i++) {
-					plumbing[i].classList.remove('hide');
+					plumbing[i].classList.remove('hidden');
 				};
 			} else {
-				featuredButton.classList.add('selected-category');
+				featuredButton.classList.add('selected');
 				for (let i = 0; i < featured.length; i++) {
-					featured[i].classList.remove('hide');
+					featured[i].classList.remove('hidden');
 				};
 			}
 		}
