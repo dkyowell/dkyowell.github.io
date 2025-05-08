@@ -59,14 +59,18 @@ a:hover {
 
 #logo {
 	flex-shrink: 0;
-	font-family: "Manrope", sans-serif;
-	font-optical-sizing: auto;
-	font-weight: 600;
+	font-family: "Ysabeau SC", sans-serif;
+    font-optical-sizing: auto;
+
+	/* font-family: "Manrope", sans-serif;
+	font-optical-sizing: auto; */
+	font-weight: 400;
 	font-style: normal;
 	font-size: 20pt;
 	letter-spacing: -1px;
+	line-height: 16pt;
 	color: var(--primary-text);
-	opacity: 75%;
+//	opacity: 75%;
 }
 
 #logo img {
