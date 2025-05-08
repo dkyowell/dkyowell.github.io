@@ -120,22 +120,6 @@ a:hover {
 	color: inherit;
 }
 
-#footer-nav {
-	display: none;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	font-size: 11pt;
-	transition: opacity 0.3s ease; /* Smooth transition */
-}
-
-#footer-info {
-	display: flex;
-	flex-direction: row;
-	flex-wrap: nowrap;
-	justify-content: space-between;
-	font-size: 11pt;
-}
 
 #header-nav {
 	display: flex;
@@ -195,14 +179,6 @@ a:hover {
 
 	#menu-button {
 		display: revert;
-	}
-	
-	#footer-info {
-		display: none;
-	}
-	
-	#footer-nav {
-		display: flex;
 	}
 	
 	#header {
