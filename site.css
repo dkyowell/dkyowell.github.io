@@ -54,7 +54,7 @@ a:hover {
 	flex-wrap: nowrap;
 	justify-content: space-between;
 	gap: 20px;
-	align-items: baseline
+	align-items: first;
 }
 
 #logo {
@@ -204,7 +204,7 @@ a:hover {
 		display: flex;
 	}
 	
-	#header {
+	/* #header {
 		padding: 1em;
 	}
 	
@@ -215,5 +215,5 @@ a:hover {
 	
 	footer {
 		padding: 1em;
-	}
+	} */
 }
