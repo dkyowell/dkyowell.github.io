@@ -32,29 +32,32 @@
 
 		main {
 			flex-grow: 1; /* Allows this element to grow and fill available space */
-			display: flex; /* Make main a flex container for its children */			
-			flex-direction: column; /* Stack children vertically */
-			overflow: overflow; /* Prevent main from overflowing, let children scroll */
+			display: grid;
+			grid-template-rows: 70% 30%;
+			grid-template-columns: 1fr;
+			padding-top: 1em;
 		}
 		
-		.section-one {
-			flex-basis: 75%;  /* Flexbox way to define initial size */
-			min-height: 300px;
-			max-height: 600px;
-			padding: 3em;
-			box-sizing: border-box; /* Include padding in height */
+		#section-middle {
+			display: grid;
+			place-items: center;
 		}
 
-		.section-two {
-			flex-basis: 25%;  /* Flexbox way to define initial size */
-			box-sizing: border-box; /* Include padding in height */
+		#section-bottom {
+			display: grid;
+			place-items: center;
 		}
 
 		.image-fader {
-			position: relative; /* Crucial for absolute positioning of children */
+			position: relative; /* Crucial for absolute positioning of children */ */
 			max-width: 85%;
 			margin: auto;
+			min-height: 200px;
+			max-height: 500px;
+			max-width: 60%;
 			height: 100%;
+			width: 100%;
+			//background: fuchsia;
 		}
 
 		.fade-image {
@@ -73,12 +76,12 @@
 		}		
 
 		#tagline {
-			font-size: 28px;
+			font-size: 32px;
 			font-family: "Poppins", sans-serif;
 			font-weight: 200;
 			line-height: 1.25;
 			text-align: center;
-			padding-top: 2em;
+			//padding-top: 2em;
 			//font-size: clamp(8px, 3vw, 28px); /* Adjust this value based on your text length and desired fit */
 			overflow: hidden; /* Optional: if text might still be too wide */
 			text-overflow: ellipsis; /* Optional: to show '...' */
@@ -92,6 +95,13 @@
 			justify-content: space-between;
 			font-size: 12pt;
 			transition: opacity 0.3s ease; /* Smooth transition */
+			padding-left: 1.5em;
+			padding-right: 1.5em;
+			padding-top: 1em;
+			padding-bottom: 1em;
+			background: rgba(86, 82, 97, 0.1);
+			//background: rgba(86, 82, 97, 1);
+			//color: white;
 		}
 		
 		#footer-info {
@@ -100,6 +110,8 @@
 			flex-wrap: nowrap;
 			justify-content: space-between;
 			font-size: 12pt;
+			padding: 2em;
+			
 		}
 
 		@media screen and (max-width: 640px) {
@@ -108,10 +120,10 @@
 				font-weight: 300;
 			}	
 			
-			.section-one {
-				min-height: 200px;
-				max-height: 500px;
-				padding: 1em;
+			#section-top {
+				//min-height: 200px;
+				//max-height: 500px;
+				//padding: 1em;
 			}	
 			
 			#footer-info {
@@ -152,7 +164,7 @@
 		</div>
 	</header>
 	<main>
-		<div class="section-one">
+		<div id="section-middle">
 			<div class="image-fader"> 
 				<img class="fade-image" src="slideshow/rm.webp" alt="Door Knob and Lock">
 				<img class="fade-image" src="slideshow/thg.webp" alt="Image 1">
@@ -161,7 +173,7 @@
 				<img class="fade-image" src="slideshow/bw.webp" alt="Door Knob and Lock">
 			</div>
 		</div>
-		<div class="section-two">
+		<div id="section-bottom">
 			<div id="tagline">
 				Architectural Hardware<br/>
 				& Kitchen and Bath Fixtures<br/>
@@ -184,7 +196,7 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 		const images = document.querySelectorAll('.image-fader .fade-image');
-		const fadeInterval = 7000; // Time each image is shown (in milliseconds) + transition time
+		const fadeInterval = 2000; // Time each image is shown (in milliseconds) + transition time
 		let currentImageIndex = 0;
 		
 		if (images.length > 1) {
