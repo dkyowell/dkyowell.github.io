@@ -104,8 +104,8 @@ a:hover {
 	grid-template-columns: auto auto auto;
 	justify-content: space-around;
 	align-items: center;
-	background: rgba(86, 82, 97, 0.1);
-	//color: white;
+	background: rgba(86, 82, 97, 1);
+	color: white;
 }
 
 
