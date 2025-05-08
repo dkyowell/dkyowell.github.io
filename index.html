@@ -72,17 +72,27 @@
 			opacity: 1;        /* Make active image visible */
 		}		
 
-		.tagline {
+		#tagline {
 			font-size: 24px;
 			font-family: "Poppins", sans-serif;
-			font-weight: 200;
+			font-weight: 300;
 			line-height: 1.25;
-			text-align: left;
+			text-align: center;
+			padding-top: 2em;
+			font-size: clamp(8px, 3vw, 28px); /* Adjust this value based on your text length and desired fit */
+			overflow: hidden; /* Optional: if text might still be too wide */
+			text-overflow: ellipsis; /* Optional: to show '...' */
+			text-align: center; /* Optional: to center the text */
 		}	
 		
+		.scaling-text {
+		}
+		
 		@media screen and (max-width: 640px) {
-			.tagline {
-				font-size: 20px;
+			#tagline {
+				//font-size: 20px;
+				font-size: 3vw; /* Adjust this value based on your text length and desired fit */
+				font-weight: 400;
 			}	
 			
 			.section-one {
@@ -129,9 +139,8 @@
 			</div>
 		</div>
 		<div class="section-two">
-			<div class="tagline">
-				Architectural Hardware<br/>
-				& Fixtures for Kitchen and Bath
+			<div id="tagline">
+				Kitchen and Bath Fixtures + Architectural Hardware<br/>
 			</div>
 		</div>
 	</main>
