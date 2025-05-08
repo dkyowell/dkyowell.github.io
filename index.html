@@ -50,18 +50,14 @@
 
 		.image-fader {
 			position: relative; /* Crucial for absolute positioning of children */ */
-			max-width: 85%;
-			margin: auto;
-			min-height: 200px;
-			max-height: 500px;
+			max-height: 80%;
 			max-width: 60%;
 			height: 100%;
 			width: 100%;
-			//background: fuchsia;
 		}
 
 		.fade-image {
-			position: absolute; /* Stack images */
+			position: absolute;
 			top: 0;
 			left: 0;
 			width: 100%;
@@ -95,13 +91,13 @@
 			justify-content: space-between;
 			font-size: 12pt;
 			transition: opacity 0.3s ease; /* Smooth transition */
-			padding-left: 1.5em;
-			padding-right: 1.5em;
+			padding-left: 3em;
+			padding-right: 3em;
 			padding-top: 1em;
 			padding-bottom: 1em;
-			background: rgba(86, 82, 97, 0.1);
-			//background: rgba(86, 82, 97, 1);
-			//color: white;
+			//background: rgba(86, 82, 97, 0.1);
+			background: rgba(86, 82, 97, 1);
+			color: white;
 		}
 		
 		#footer-info {
@@ -112,6 +108,10 @@
 			font-size: 12pt;
 			padding: 2em;
 			
+		}
+		
+		#footer-nav a:hover {
+			color: inherit;
 		}
 
 		@media screen and (max-width: 640px) {
