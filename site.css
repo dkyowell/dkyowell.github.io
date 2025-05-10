@@ -3,6 +3,7 @@
 	--primary-text: #3e3f43;
 }
 
+
 html {
 	height: 100%;
 	background: rgba(218, 218, 229, 0.75);
@@ -14,13 +15,14 @@ body {
 	margin: 0em;
 	padding: 0em;
 	height: 100%;
-	font-family: "Poppins", sans-serif;
+	font-family: "Manrope", sans-serif;
 	font-weight: 300;
 	font-style: normal;
-	font-size: 12pt;
+	font-size: 14pt;
 	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
+			line-height: 1.75;
 }
 
 header {
