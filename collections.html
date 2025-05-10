@@ -37,12 +37,7 @@
 
 		/* Style for the odd rows */
 		.collection > *:nth-child(odd) {
-			background-color: rgba(0, 0, 0, 0.05); /* Light gray background for odd rows */
-		}
-		
-		/* Style for the even rows */
-		.collection > *:nth-child(even) {
-			//background-color: #ffffff; /* White background for even rows */
+			background-color: rgba(0, 0, 0, 0.05);
 		}
 		
 		.brand {
@@ -59,7 +54,7 @@
 		}
 		
 		.brand-name {
-			font-weight: 400;
+			font-weight: 600;
 		}
 		.brand-desc {
 			opacity: 0.9;
@@ -112,9 +107,7 @@
 		.overlay-text.enabled {
 			opacity: 100; /* Initially hide the overlay */
 			transform: translateX(-50%) translateY(-50%) scale(1);
-		}
-		
-		
+		}				
 
 		.overlay-text a:hover {
 			color: inherit;
@@ -128,9 +121,7 @@
 		.overlay-text.enabled a {
 			pointer-events: revert;
 			cursor: revert;
-		}
-
-		
+		}		
 
 		@media screen and (max-width: 640px) {
 			main {
@@ -143,8 +134,8 @@
 			
 			.brand {
 				grid-template-columns: auto;
+				font-size: 12pt;
 			}
-
 		}
 	</style>
 	<script></script>
