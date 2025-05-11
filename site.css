@@ -3,11 +3,9 @@
 	--primary-text: #3e3f43;
 }
 
-
 html {
 	height: 100%;
-	//background: rgba(218, 218, 229, 0.75);
-	background: rgb(228, 231, 235);
+	background: rgb(232, 232, 233);
 	color: var(--primary-text);
 }
  
@@ -18,7 +16,7 @@ body {
 	font-family: "Poppins", sans-serif;
 	font-weight: 300;
 	font-style: normal;
-	font-size: 14pt;
+	font-size: 13pt;
 	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
@@ -60,6 +58,7 @@ a:hover {
 }
 
 #logo img {
+	display: block;
 	width: 170px;
 }
 
@@ -98,6 +97,7 @@ a:hover {
 
 
 #popdown .navitem {
+	font-size: 12pt;
 	font-weight: 300;
 }
 
