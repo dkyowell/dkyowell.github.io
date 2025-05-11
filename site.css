@@ -7,7 +7,7 @@
 html {
 	height: 100%;
 	//background: rgba(218, 218, 229, 0.75);
-	background: white;
+	background: rgb(243, 243, 243);
 	color: var(--primary-text);
 }
  
@@ -15,14 +15,13 @@ body {
 	margin: 0em;
 	padding: 0em;
 	height: 100%;
-	font-family: "Manrope", sans-serif;
+	font-family: "Poppins", sans-serif;
 	font-weight: 300;
 	font-style: normal;
 	font-size: 14pt;
 	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
-			line-height: 1.75;
 }
 
 header {
@@ -57,19 +56,7 @@ a:hover {
 }
 
 #logo {
-	flex-shrink: 0;
-	font-family: "Ysabeau SC", sans-serif;
-    font-optical-sizing: auto;
-
-	/* font-family: "Manrope", sans-serif;
-	font-optical-sizing: auto; */
-	font-weight: 400;
-	font-style: normal;
-	font-size: 20pt;
-	letter-spacing: -1px;
-	line-height: 16pt;
-	color: var(--primary-text);
-//	opacity: 75%;
+	opacity: 90%;
 }
 
 #logo img {
