@@ -36,7 +36,7 @@ body {
 	height: 100vh; /* Cover the full viewport height */
 	z-index: -1; /* Place this layer behind other content */
 	background: linear-gradient(to bottom, #456478, #3c4d58);
-	background: linear-gradient(to bottom, #3c6078, #3a4a54);
+	background: linear-gradient(to bottom, #3c6078, #415764);
 }
 
 #content {
