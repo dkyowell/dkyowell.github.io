@@ -16,6 +16,7 @@ body {
 	background:#456478;
 	background:#456478;
 	background: linear-gradient(to bottom, #456478, #3c4d58); /* Example: Subtle blue to purple */
+	background-size: cover;
 	background-attachment: fixed;
 	
 	margin: 0em;
