@@ -17,7 +17,7 @@ body {
 	/* background:#456478;
 	background:#456478; */
 	height: 100%;
-	background: linear-gradient(to bottom, #456478, #3c4d58); /* Example: Subtle blue to purple */ */
+	background: linear-gradient(to top, #456478, #3c4d58); /* Example: Subtle blue to purple */ */
 	background-size: cover;
 	background-attachment: fixed;
 	margin: 0em;
@@ -27,20 +27,29 @@ body {
 	font-weight: 300;
 	font-style: normal;
 	font-size: 13pt;
+}
+
+header {
+	padding: 0em;
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+ 
+main {
+	padding-top: 1em;
+	padding-left: 2em;
+	padding-right: 2em;
+	padding-bottom: 2em;
 	max-width: 960px;
 	margin-left: auto;
 	margin-right: auto;
 }
 
-header {
-	 padding: 0em;
-}
- 
-main {
-	 padding-top: 1em;
-	 padding-left: 2em;
-	 padding-right: 2em;
-	 padding-bottom: 2em;
+footer {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
 }
  
 a {
