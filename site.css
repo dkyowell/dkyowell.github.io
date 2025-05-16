@@ -18,7 +18,8 @@ body {
 	background: linear-gradient(to bottom, #456478, #3c4d58); /* Example: Subtle blue to purple */
 	background-size: cover;
 	background-attachment: fixed;
-	
+	min-height: 100vh;
+
 	margin: 0em;
 	padding: 0em;
 	height: 100%;
