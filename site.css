@@ -8,20 +8,21 @@
 html {
 	height: 100%;
 	//background:#e2e1e0;
-	background: white;
-	background:#456478;
-	background:#456478;
-    background: linear-gradient(to bottom, #456478, #3c4d58); /* Example: Subtle blue to purple */
-	background-attachment: fixed;
 	color: var(--primary-text);
 }
  
 body {
+	background: white;
+	background:#456478;
+	background:#456478;
+	background: linear-gradient(to bottom, #456478, #3c4d58); /* Example: Subtle blue to purple */
+	background-attachment: fixed;
+	
 	margin: 0em;
 	padding: 0em;
 	height: 100%;
 	font-family: "Poppins", sans-serif;
-	font-weight: 300;
+	font-weight: 800;
 	font-style: normal;
 	font-size: 13pt;
 	max-width: 960px;
