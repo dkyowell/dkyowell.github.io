@@ -1,14 +1,18 @@
 :root {
 	--primary-color: #eb9297;
+	--primary-text: rgba(255, 255, 255, 0.75);
+	//--primary-color: #cc3942;
 	//--primary-text: #3e3f43;
-	--primary-text: #4d4c4c;
-	--primary-text: rgba(255, 255, 255, 0.804);
 }
 
 html {
 	height: 100%;
-	background:#e2e1e0;
+	//background:#e2e1e0;
+	background: white;
 	background:#456478;
+	background:#456478;
+    background: linear-gradient(to bottom, #456478, #3c4d58); /* Example: Subtle blue to purple */
+	background-attachment: fixed;
 	color: var(--primary-text);
 }
  
@@ -62,7 +66,7 @@ a:hover {
 #logo img {
 	display: block;
 	height: 34px;
-	opacity: 80%;
+	opacity: 70%;
 }
 
 #logo a:hover {
@@ -93,7 +97,7 @@ a:hover {
 	grid-template-columns: auto auto auto;
 	justify-content: space-around;
 	align-items: center;
-	background: rgba(0, 0, 0, 0.3);
+	background: rgba(0, 0, 0, 0.5);
 	color: white;
 }
 
@@ -109,6 +113,7 @@ a:hover {
 
 
 #header-nav {
+	transform: translateY(-4px);
 	display: flex;
 	flex-direction: row;
 	flex-wrap: nowrap;
@@ -121,6 +126,7 @@ a:hover {
 }
 
 #menu-button {
+	transform: translateY(-4px);
 	display: none;
 }
 
