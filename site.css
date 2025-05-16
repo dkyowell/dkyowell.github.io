@@ -8,8 +8,6 @@
 html {
 	height: 100%;
 	background:#456478;
-	background: linear-gradient(to bottom, #456478, #3c4d58);
-	background-attachment: fixed;
 	color: var(--primary-text);
 }
  
@@ -17,6 +15,9 @@ body {
 	//background: white;
 	/* background:#456478;
 	background:#456478; */
+	background: linear-gradient(to bottom, #456478, #3c4d58);
+	//background: linear-gradient(to bottom, #435b42, #2d3f2d);
+	background-attachment: fixed;
 	height: 100%;
 	margin: 0em;
 	padding: 0em;
@@ -27,11 +28,16 @@ body {
 	font-size: 13pt;
 }
 
-header {
-	padding: 0em;
+#body {
+	height: 100%;
+	width: 100%;
 	max-width: 960px;
 	margin-left: auto;
-	margin-right: auto;
+	margin-right: auto;	
+}
+
+header {
+	padding: 0em;
 }
  
 main {
@@ -39,15 +45,9 @@ main {
 	padding-left: 2em;
 	padding-right: 2em;
 	padding-bottom: 2em;
-	max-width: 960px;
-	margin-left: auto;
-	margin-right: auto;
 }
 
 footer {
-	max-width: 960px;
-	margin-left: auto;
-	margin-right: auto;
 }
  
 a {
@@ -76,7 +76,7 @@ a:hover {
 #logo img {
 	display: block;
 	height: 34px;
-	opacity: 70%;
+	opacity: 80%;
 }
 
 #logo a:hover {
