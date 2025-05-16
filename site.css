@@ -15,9 +15,8 @@ body {
 	//background: white;
 	/* background:#456478;
 	background:#456478; */
-	background: linear-gradient(to bottom, #456478, #3c4d58);
 	//background: linear-gradient(to bottom, #435b42, #2d3f2d);
-	background-attachment: fixed;
+	//background-size: auto;
 	height: 100%;
 	margin: 0em;
 	padding: 0em;
@@ -28,12 +27,21 @@ body {
 	font-size: 13pt;
 }
 
-#body {
-	height: 100%;
-	width: 100%;
+
+#background {
+	position: fixed; /* Keep the background fixed in the viewport */
+	top: 0;
+	left: 0;
+	width: 100vw; /* Cover the full viewport width */
+	height: 100vh; /* Cover the full viewport height */
+	z-index: -1; /* Place this layer behind other content */
+	background: linear-gradient(to bottom, #456478, #3c4d58);
+}
+
+#content {
 	max-width: 960px;
 	margin-left: auto;
-	margin-right: auto;	
+	margin-right: auto;		
 }
 
 header {
