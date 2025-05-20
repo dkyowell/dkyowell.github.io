@@ -36,6 +36,7 @@
 			height: 100%;
 			display: grid;
 			place-items: center;
+			overflow: clip;
 		}
 
 		#section-bottom {
@@ -57,12 +58,22 @@
 			height: 100%;
 			object-fit: contain;
 			opacity: 0;
-			transition: opacity 0.5s ease-in-out;
+			//transition: opacity 0.5s ease-in-out;
+			transform: translateX(200%); /* Using translateX on itself! */
+			transition: transform 0.5s ease-in-out;
 		}
 
-		.fade-image.active {
-			opacity: 1;        /* Make active image visible */
+		.fade-image.activated {
+			opacity: 1;
+			transform: translateX(0); /* Using translateX on itself! */
 		}		
+
+		.fade-image.deactivated {
+			opacity: 1;
+			transform: translateX(-200%); /* Using translateX on itself! */
+		}		
+		
+		
 
 		#tagline {
 			font-size: 34px;
@@ -161,11 +172,12 @@
 	<main>
 		<div id="section-middle">
 			<div class="image-fader"> 
-				<img class="fade-image" src="slideshow/rm.webp" alt="Door Knob and Lock">
-				<img class="fade-image" src="slideshow/thg.webp" alt="Image 1">
-				<img class="fade-image" src="slideshow/am.webp" alt="Cabinet Knob">
-				<img class="fade-image" src="slideshow/tub.webp" alt="Image 2">
-				<img class="fade-image" src="slideshow/bw.webp" alt="Door Knob and Lock">
+				<img class="fade-image" src="slideshow/rm.webp" alt="Featured Image">
+				<img class="fade-image" src="slideshow/thg.webp" alt="Featured Image">
+				<img class="fade-image" src="slideshow/sh.webp" alt="Featured Image">
+				<img class="fade-image" src="slideshow/tub.webp" alt="Featured Image">
+				<img class="fade-image" src="slideshow/thg2.webp" alt="Featured Image">
+				<img class="fade-image" src="slideshow/am.webp" alt="Featured Image">
 			</div>
 		</div>
 		<div id="section-bottom">
@@ -190,24 +202,31 @@
 	<script>
 		document.addEventListener('DOMContentLoaded', () => {
 		const images = document.querySelectorAll('.image-fader .fade-image');
-		const fadeInterval = 5000; // Time each image is shown (in milliseconds) + transition time
+		const fadeInterval = 7000; // Time each image is shown (in milliseconds) + transition time
 		let currentImageIndex = 0;
 		
 		if (images.length > 1) {
 			// Ensure the first image is initially active if not set in HTML
-			if (!images[currentImageIndex].classList.contains('active')) {
-				images[currentImageIndex].classList.add('active');
+			if (!images[currentImageIndex].classList.contains('activated')) {
+				images[currentImageIndex].classList.add('activated');
 			}
 		
 			setInterval(() => {
 			  // Remove active class from current image
-			  images[currentImageIndex].classList.remove('active');
+
+			  const deactivated = document.querySelectorAll('.deactivated');
+			  deactivated.forEach(function(element) {
+				  element.classList.remove('deactivated');
+			  });
+
+			  images[currentImageIndex].classList.remove('activated');
+			  images[currentImageIndex].classList.add('deactivated');
 		
 			  // Increment index, looping back to 0 if needed
 			  currentImageIndex = (currentImageIndex + 1) % images.length;
 		
 			  // Add active class to the next image
-			  images[currentImageIndex].classList.add('active');
+			  images[currentImageIndex].classList.add('activated');
 		
 			}, fadeInterval);
 		
